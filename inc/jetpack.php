@@ -3,17 +3,17 @@
  * Jetpack Compatibility File
  * See: http://jetpack.me/
  *
- * @package _s
+ * @package exp
  */
 
 /**
  * Add theme support for Infinite Scroll.
  * See: http://jetpack.me/support/infinite-scroll/
  */
-function _s_jetpack_setup() {
-	add_theme_support( 'infinite-scroll', array(
+function exp_jetpackexpetup() {
+	add_themeexpupport( 'infinite-scroll', array(
 		'container' => 'main',
 		'footer'    => 'page',
 	) );
 }
-add_action( 'after_setup_theme', '_s_jetpack_setup' );
+add_action( 'afterexpetup_theme', 'exp_jetpackexpetup' );
