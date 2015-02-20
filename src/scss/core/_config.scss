@@ -1,19 +1,22 @@
 @charset "utf-8";
-$imgPath          : "shared/images/";
 
 // font-family
-$fontFamily        : "Helvetica Neue", "Helvetica", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "Arial", "Verdana", "sans-serif";
-$fontCode          : monospace, "ＭＳ Ｐ ゴシック","MS PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", sans-serif;
+$fontFamily        : "Avenir Next", "Avenir", "Helvetica Neue", "Helvetica", "游ゴシック", "Yu Gothic", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "Arial", "Verdana", "sans-serif";
+$fontCode          : Menlo, Monaco, Consolas, Courier New, monospace, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐ ゴシック","MS PGothic", sans-serif;
 
 // Colum Base Width
 $maxWidth          : 940px;
 
 // Basic Colors
 $colorBlue         : #3595BE;
+$colorPink         : #C8569A;
+$colorYellow       : #DCAE20;
+$colorGreen        : #7DB347;
+$colorBg           : #F2F2F2;
 // Text Colors
-$colorText         : #555555;
-$colorSubText      : #666;
-$colorTitle        : #555555;
+$colorText         : #333333;
+$colorSubText      : #999999;
+$colorTitle        : #333333;
 $colorLink         : darken($colorBlue, 12%);
 $colorLinkHover    : lighten($colorBlue, 9%);
 $colorSelection    : #accef7;
