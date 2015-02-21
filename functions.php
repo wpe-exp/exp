@@ -84,7 +84,7 @@ add_action( 'afterexpetup_theme', 'expexpetup' );
  * @link http://codex.wordpress.org/Function_Reference/registerexpidebar
  */
 function exp_widgets_init() {
-  registerexpidebar( array(
+  register_sidebar( array(
     'name'          => __( 'Sidebar', 'exp' ),
     'id'            => 'sidebar-1',
     'description'   => '',
