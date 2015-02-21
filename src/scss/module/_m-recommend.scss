@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* recommend
+---------------------------------------- */
+.recommend {
+  background-color: #ffffff;
+  padding: 20px;
+  border-bottom: 2px solid $colorBg;
+  &__title {
+    margin-bottom: 20px;
+    font-size: rem-calc(18);
+    font-weight: bold;
+  }
+}
+
+/* media
+---------------------------------------- */
+@media #{$medium-up}{
+  .recommend {
+    padding: 40px 80px;
+    &__title {
+      margin-bottom: 20px;
+      font-size: rem-calc(20);
+    }
+  }
+}

@@ -159,3 +159,23 @@
     border-left: $size solid transparent;
   }
 }
+
+//***********************
+// sns button
+//***********************
+@mixin snsButtonBase($color, $colorLink) {
+  display: block;
+  background-color: $color;
+  color: #ffffff;
+  line-height: 1.0;
+  text-align: center;
+  @media #{$medium-up}{
+    border-radius: 2px;
+    letter-spacing: 0.4px;
+    transition: all 0.3s;
+    &:hover {
+      color: #ffffff;
+      background-color: $colorLink;
+    }
+  }
+}

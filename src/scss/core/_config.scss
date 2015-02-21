@@ -1,14 +1,17 @@
 @charset "utf-8";
 
 // font-family
-$fontFamily        : "Avenir Next", "Avenir", "Helvetica Neue", "Helvetica", "游ゴシック", "Yu Gothic", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "Arial", "Verdana", "sans-serif";
+$fontFamily        : "Avenir Next", "Avenir", "Helvetica Neue", "Helvetica", "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "Arial", "Verdana", "sans-serif";
 $fontCode          : Menlo, Monaco, Consolas, Courier New, monospace, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐ ゴシック","MS PGothic", sans-serif;
 
 // Colum Base Width
 $maxWidth          : 940px;
 
+// Base margin
+$margin            : 80px;
+
 // Basic Colors
-$colorBlue         : #3595BE;
+$colorBlue         : #4ABBC1;
 $colorPink         : #C8569A;
 $colorYellow       : #DCAE20;
 $colorGreen        : #7DB347;
@@ -20,3 +23,12 @@ $colorTitle        : #333333;
 $colorLink         : darken($colorBlue, 12%);
 $colorLinkHover    : lighten($colorBlue, 9%);
 $colorSelection    : #accef7;
+// SNS color
+$colorTw           : #55ACEE;
+$colorTwHover      : lighten($colorTw, 5%);
+$colorFb           : #3B5998;
+$colorFbHover      : lighten($colorFb, 5%);
+$colorPocket       : #D3505A;
+$colorPocketHover  : lighten($colorPocket, 5%);
+$colorHatena       : #0071C5;
+$colorHatenaHover  : lighten($colorHatena, 5%);
