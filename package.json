@@ -14,7 +14,7 @@
     ]
   },
   "devDependencies": {
-    "browser-sync": "*",
+    "browser-sync": "^2.2.0",
     "browserify": "*",
     "debowerify": "*",
     "del": "^1.1.1",
@@ -25,7 +25,7 @@
     "gulp-data": "^1.2.0",
     "gulp-filter": "^2.0.2",
     "gulp-imagemin": "*",
-    "gulp-jade": "~1.0.0",
+    "gulp-jade": "^1.0.0",
     "gulp-jshint": "^1.9.2",
     "gulp-load-plugins": "^0.8.0",
     "gulp-rename": "^1.2.0",
@@ -35,7 +35,7 @@
     "gulp-uglify": "^1.0.2",
     "gulp.spritesmith": "*",
     "run-sequence": "^1.0.2",
-    "vinyl-buffer": "~1.0.0",
-    "vinyl-source-stream": "~1.0.0"
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.0.0"
   }
 }

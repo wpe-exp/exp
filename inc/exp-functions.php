@@ -99,7 +99,7 @@ if( !function_exists( 'the_custom_archive_title' ) ) {
 /*
  *
  */
-function get_category_sub_menu() {
+function get_category_sub_menu_item() {
 	$args = array(
 		'type'                     => 'post',
 		'child_of'                 => 0,
@@ -116,7 +116,6 @@ function get_category_sub_menu() {
 
 	);
 	$categories = get_categories( $args );
-	$catlist = '<li clas="globalNav__item">Categories<ul>';
 	foreach ( $categories as $cat ) {
 		$catlist .= '<li><a href="' . get_category_link( $cat->term_id ) . '">' . $cat->name . '</a></li>';
 	}
