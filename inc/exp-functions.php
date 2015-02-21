@@ -41,12 +41,12 @@ if( !function_exists( 'is_first_post' ) ) {
 /*
  * get_primary_tag return array
  */
-if ( !function_exists( 'get_primary_tag' ) ) {
-	function get_primary_tag() {
-		$tags = get_the_tags( get_the_ID() );
-		if ( !$tags ) return;
-		$tag = reset($tags);
-		return $tag;
+if ( !function_exists( 'get_primary_cat' ) ) {
+	function get_primary_cat() {
+		$cats = get_the_category( get_the_ID() );
+		if ( !$cats ) return;
+		$cat = reset($cats);
+		return $cat;
 	}
 }
 
