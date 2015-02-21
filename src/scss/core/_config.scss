@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 // font-family
-$fontFamily        : "Avenir Next", "Avenir", "Helvetica Neue", "Helvetica", "游ゴシック", "Yu Gothic", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "Arial", "Verdana", "sans-serif";
+$fontFamily        : "Avenir Next", "Avenir", "Helvetica Neue", "Helvetica", "游ゴシック体", "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "Arial", "Verdana", "sans-serif";
 $fontCode          : Menlo, Monaco, Consolas, Courier New, monospace, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐ ゴシック","MS PGothic", sans-serif;
 
 // Colum Base Width
@@ -20,3 +20,5 @@ $colorTitle        : #333333;
 $colorLink         : darken($colorBlue, 12%);
 $colorLinkHover    : lighten($colorBlue, 9%);
 $colorSelection    : #accef7;
+// Category Colors
+$colorCatBlog      : #888;
