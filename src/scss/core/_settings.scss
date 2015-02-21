@@ -203,7 +203,7 @@ $body-font-family: $fontFamily;
 // $header-font-family: $body-font-family;
 // $header-font-weight: $font-weight-normal;
 // $header-font-style: normal;
-// $header-font-color: $jet;
+$header-font-color: $colorText;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -227,6 +227,7 @@ $body-font-family: $fontFamily;
 
 // These control how subheaders are styled.
 // $subheader-line-height: 1.4;
+// $subheader-font-color: scale-color($header-font-color, $lightness: 35%);
 // $subheader-font-color: scale-color($header-font-color, $lightness: 35%);
 // $subheader-font-weight: $font-weight-normal;
 // $subheader-top-margin: .2rem;
@@ -819,17 +820,21 @@ $body-font-family: $fontFamily;
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // Off Canvas Tab Bar Variables
-// $include-html-off-canvas-classes: $include-html-classes;
+$include-html-off-canvas-classes: $include-html-classes;
 
 // $tabbar-bg: $oil;
+$tabbar-bg: #fff;
 // $tabbar-height: rem-calc(45);
+$tabbar-height: rem-calc(48);
 // $tabbar-icon-width: $tabbar-height;
+$tabbar-icon-width: rem-calc(60);
 // $tabbar-line-height: $tabbar-height;
-// $tabbar-color: $white;
+$tabbar-color: $colorText;
 // $tabbar-middle-padding: 0 rem-calc(10);
 
 // Off Canvas Divider Styles
 // $tabbar-left-section-border: solid 1px scale-color($tabbar-bg, $lightness: -50%);
+$tabbar-left-section-border: none;
 // $tabbar-right-section-border: $tabbar-left-section-border;
 
 
@@ -866,6 +871,7 @@ $body-font-family: $fontFamily;
 
 // Off Canvas Menu Icon Variables
 // $tabbar-menu-icon-color: $white;
+$tabbar-menu-icon-color: $colorText;
 // $tabbar-menu-icon-hover: scale-color($tabbar-menu-icon-color, $lightness: -30%);
 
 // $tabbar-menu-icon-text-indent: rem-calc(35);
@@ -873,7 +879,7 @@ $body-font-family: $fontFamily;
 // $tabbar-menu-icon-height: $tabbar-height;
 // $tabbar-menu-icon-padding: 0;
 
-// $tabbar-hamburger-icon-width: rem-calc(16);
+$tabbar-hamburger-icon-width: rem-calc(20);
 // $tabbar-hamburger-icon-left: false;
 // $tabbar-hamburger-icon-top: false;
 // $tabbar-hamburger-icon-thickness: 1px;

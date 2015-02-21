@@ -1,0 +1,18 @@
+header.l-header
+  div.tab-bar(data-topbar="")
+    div.left-small.left-small
+      a.left-off-canvas-toggle.menu-icon.menu-icon--globalSp(href="#", aria-expanded="true"): span
+    h1.siteLogoSP: img(src="/assets/images/page/common/icon_exp.svg", alt="exp")
+  nav.globalNavSp.left-off-canvas-menu
+    ul.globalNavSp__list.off-canvas-list
+      li: label Menu
+      li(class="globalNavSp__item"): +link('', 'About')
+      li(class="globalNavSp__item")
+        +link('', 'Category')
+        ul.globalCatList
+          li: a(href="") cat
+          li: a(href="") cat
+          li: a(href="") cat
+          li: a(href="") cat
+          li: a(href="") cat
+      li(class="globalNavSp__item"): +link('', 'Member')

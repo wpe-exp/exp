@@ -1,1 +1,59 @@
 @charset "utf-8";
+/* l-header
+---------------------------------------- */
+.l-header {
+  background-image: url('../../assets/images/page/common/img_colorbar.png');
+  background-position: top center;
+  background-repeat: repeat-x;
+  background-size: 100% 6px;
+  background-color: #fff;
+  padding-top: 6px;
+  &__inner {
+    @include grid-row;
+  }
+}
+
+/* siteLogo
+---------------------------------------- */
+.siteLogo {
+  margin-top: 24px;
+  margin-bottom: 22px;
+  float: left;
+  width: 68px;
+}
+.siteLogoSP {
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* globalNav
+---------------------------------------- */
+.globalNav {
+  float: right;
+  &__list {
+    @extend %group;
+    list-style: none;
+    margin: 0;
+    display: table-cell;
+    vertical-align: middle;
+    height: 114px;
+    li {
+      float: left;
+      margin-left: 1.5em;
+      &:first-child {
+        margin-left: 0;
+      }
+      a {
+        color: $colorText;
+      }
+    }
+  }
+}
+.globalNavSp {}
+
+.tab-bar .menu-icon--globalSp span::after { top: 57%; }
