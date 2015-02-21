@@ -6,11 +6,17 @@
   letter-spacing: .08em;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 1em;
+  margin: 0;
+  padding-bottom: 1em;
+  @media #{$small-only} {
+    background-color: #fff;
+    margin-bottom: 0;
+    padding-top: 1em;
+  }
   &__num {
     font-size: rem-calc(14);
     font-weight: normal;
-    margin-left: 1em;
+    margin-left: .8em;
   }
   &__total {
     font-size: rem-calc(10);
@@ -36,20 +42,25 @@
   }
 }
 .postArchive {
-  @extend %group;
-  background-color: #fff;
-  margin-top: 10px;
-  padding: 20px;
+  a {
+    @extend %group;
+    display: block;
+    background-color: #fff;
+    padding: 10px 20px;
+  }
   &__imgWrap {
     position: relative;
     float: left;
     margin-right: 20px;
+    border-radius: 2px;
+    overflow: hidden;
     img {
       width: 120px;
       height: 120px;
     }
   }
   &__label {
+    font-size: rem-calc(12);
     position: absolute;
     top: 0;
     right: 0;
@@ -57,31 +68,57 @@
   &__meta{
     @extend %postArchiveRight;
     color: $colorText;
-    font-size: rem-calc(18);
     margin-bottom: 10px;
+    line-height: 1em;
     time {
+      font-size: rem-calc(10);
       margin-right: .8em;
     }
     img {
-      margin-right: .8em;
-      width: 26px;
-      height: 26px;
+      margin-top: -1px;
+      margin-right: .6em;
+      width: 16px;
+      height: 16px;
+      border-radius: 100px;
+    }
+    span {
+      font-size: rem-calc(10);
     }
   }
   &__title {
     @extend %postArchiveRight;
-    font-size: rem-calc(16);
+    font-size: rem-calc(14);
     letter-spacing: .08em;
+    margin-top: 0;
+    margin-bottom: 0;
   }
   @media #{$medium-up} {
+    a {
+      padding: 20px;
+      margin-top: 10px;
+    }
     &__imgWrap {
       img {
         width: 170px;
         height: 170px;
       }
     }
+    &__label {
+      font-size: rem-calc(16px);
+    }
     &__meta {
       margin-bottom: 20px;
+      line-height: 26px;
+      time {
+        font-size: rem-calc(18);
+      }
+      img {
+        width: 26px;
+        height: 26px;
+      }
+      span {
+        font-size: rem-calc(18);
+      }
     }
     &__title {
       font-size: rem-calc(24);
