@@ -11,51 +11,52 @@ block prepend meta
   - var bodyClass = 'single'
 block append meta
 block body
-  div.l-container
-    include inc/layout/_l-header
+  div.off-canvas-wrap(data-offcanvas)
+    div.l-container.inner-wrap
+      include inc/layout/_l-header
 
-    .l-row
-      #main.l-main
-        article.post
-          header.post__header
-            img.post__image(src="/assets/images/dummy_image_post.png", alt="")
-            div.post__meta
-              time 2014.10.26
-              img(src="/assets/images/dummy_thumb_author.png", alt="")
-              span John Smith
-              a.post__label.catLabel.catLabel--wordpress Category
-            h1.post__title WordPress はメンテナンスが大事！改ざんされたサイトを復旧させるまでの道のり
-            .snsShare
-              ul.snsShare__list
-                li.snsShare__item: +link('', 'twitter')(class="btnTw")
-                li.snsShare__item: +link('', 'facebook')(class="btnFb")
-                li.snsShare__item: +link('', 'pocket')(class="btnPocket")
-                li.snsShare__item: +link('', 'Hatena')(class="btnHatena")
-          div.post__content.stylePost
-            h2 はじまりは Google の通告から
-            h3 h3 title 見出し
-            p asdfghjmk,./
-            p 要するに今日に忠告者は何しろこの詐欺たですだけになるがおきませには教育しなかっませから、ちょっとには知れですななたら。力に移れたものはもう今から別になたます。なお大森さんが蹂躙行儀あまり衰弱へしならがたこんな生徒それか観念とというご病気うだたたて、この結果は私か学芸性格へいうば、嘉納さんののを背後のあれによくご忠告とすれて私事がご反抗にあっようにけっしてご供をしうたが、ぼんやりまして永続に出来ないばならたいのでするなけれまし。
-            pre
-              code function $initHighlight(block, cls) {
-                |   try {
-                |     if (cls.search(/\bno\-highlight\b/) != -1)
-                |       return process(block, true, 0x0F) +
-                |             ' class=""';
-                |    } catch (e) {
-                |   /* handle exception */
-                |   }
-                |   for (var i = 0 / 2; i < classes.length; i++) {
-                |     if (checkCondition(classes[i]) === undefined)
-                |       return /\d+[\s/]/g;
-                |   }
-                |  }
-            p 要するに今日に忠告者は何しろこの詐欺たですだけになるがおきませには教育しなかっませから、ちょっとには知れですななたら。力に移れたものはもう今から別になたます。なお大森さんが蹂躙行儀あまり衰弱へしならがたこんな生徒それか観念とというご病気うだたたて、この結果は私か学芸性格へいうば、嘉納さんののを背後のあれによくご忠告とすれて私事がご反抗にあっようにけっしてご供をしうたが、ぼんやりまして永続に出来ないばならたいのでするなけれまし。
-            p 要するに今日に忠告者は何しろこの詐欺たですだけになるがおきませには教育しなかっませから、ちょっとには知れですななたら。力に移れたものはもう今から別になたます。なお大森さんが蹂躙行儀あまり衰弱へしならがたこんな生徒それか観念とというご病気うだたたて、この結果は私か学芸性格へいうば、嘉納さんののを背後のあれによくご忠告とすれて私事がご反抗にあっようにけっしてご供をしうたが、ぼんやりまして永続に出来ないばならたいのでするなけれまし。
-            p 要するに今日に忠告者は何しろこの詐欺たですだけになるがおきませには教育しなかっませから、ちょっとには知れですななたら。力に移れたものはもう今から別になたます。なお大森さんが蹂躙行儀あまり衰弱へしならがたこんな生徒それか観念とというご病気うだたたて、この結果は私か学芸性格へいうば、嘉納さんののを背後のあれによくご忠告とすれて私事がご反抗にあっようにけっしてご供をしうたが、ぼんやりまして永続に出来ないばならたいのでするなけれまし。
-          div.post__content
-            include inc/module/_m-author
-        include inc/module/_m-sns
-        include inc/module/_m-recommend
-    include inc/layout/_l-footer
+      .l-row
+        #main.l-main
+          article.post
+            header.post__header
+              img.post__image(src="/assets/images/dummy_image_post.png", alt="")
+              div.post__meta
+                time 2014.10.26
+                img(src="/assets/images/dummy_thumb_author.png", alt="")
+                span John Smith
+                a.post__label.catLabel.catLabel--wordpress Category
+              h1.post__title WordPress はメンテナンスが大事！改ざんされたサイトを復旧させるまでの道のり
+              .snsShare
+                ul.snsShare__list
+                  li.snsShare__item: +link('', 'twitter')(class="btnTw")
+                  li.snsShare__item: +link('', 'facebook')(class="btnFb")
+                  li.snsShare__item: +link('', 'pocket')(class="btnPocket")
+                  li.snsShare__item: +link('', 'Hatena')(class="btnHatena")
+            div.post__content.stylePost
+              h2 はじまりは Google の通告から
+              h3 h3 title 見出し
+              p asdfghjmk,./
+              p 要するに今日に忠告者は何しろこの詐欺たですだけになるがおきませには教育しなかっませから、ちょっとには知れですななたら。力に移れたものはもう今から別になたます。なお大森さんが蹂躙行儀あまり衰弱へしならがたこんな生徒それか観念とというご病気うだたたて、この結果は私か学芸性格へいうば、嘉納さんののを背後のあれによくご忠告とすれて私事がご反抗にあっようにけっしてご供をしうたが、ぼんやりまして永続に出来ないばならたいのでするなけれまし。
+              pre
+                code function $initHighlight(block, cls) {
+                  |   try {
+                  |     if (cls.search(/\bno\-highlight\b/) != -1)
+                  |       return process(block, true, 0x0F) +
+                  |             ' class=""';
+                  |    } catch (e) {
+                  |   /* handle exception */
+                  |   }
+                  |   for (var i = 0 / 2; i < classes.length; i++) {
+                  |     if (checkCondition(classes[i]) === undefined)
+                  |       return /\d+[\s/]/g;
+                  |   }
+                  |  }
+              p 要するに今日に忠告者は何しろこの詐欺たですだけになるがおきませには教育しなかっませから、ちょっとには知れですななたら。力に移れたものはもう今から別になたます。なお大森さんが蹂躙行儀あまり衰弱へしならがたこんな生徒それか観念とというご病気うだたたて、この結果は私か学芸性格へいうば、嘉納さんののを背後のあれによくご忠告とすれて私事がご反抗にあっようにけっしてご供をしうたが、ぼんやりまして永続に出来ないばならたいのでするなけれまし。
+              p 要するに今日に忠告者は何しろこの詐欺たですだけになるがおきませには教育しなかっませから、ちょっとには知れですななたら。力に移れたものはもう今から別になたます。なお大森さんが蹂躙行儀あまり衰弱へしならがたこんな生徒それか観念とというご病気うだたたて、この結果は私か学芸性格へいうば、嘉納さんののを背後のあれによくご忠告とすれて私事がご反抗にあっようにけっしてご供をしうたが、ぼんやりまして永続に出来ないばならたいのでするなけれまし。
+              p 要するに今日に忠告者は何しろこの詐欺たですだけになるがおきませには教育しなかっませから、ちょっとには知れですななたら。力に移れたものはもう今から別になたます。なお大森さんが蹂躙行儀あまり衰弱へしならがたこんな生徒それか観念とというご病気うだたたて、この結果は私か学芸性格へいうば、嘉納さんののを背後のあれによくご忠告とすれて私事がご反抗にあっようにけっしてご供をしうたが、ぼんやりまして永続に出来ないばならたいのでするなけれまし。
+            div.post__content
+              include inc/module/_m-author
+          include inc/module/_m-sns
+          include inc/module/_m-recommend
+      include inc/layout/_l-footer
 block append scriptFooter
