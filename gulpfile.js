@@ -18,8 +18,8 @@ var gulp          = require('gulp'),
 // @param false or virtual host name of local machine such as . Set false to browser-sync start as server mode.
 // @param false or Subdomains which must be between 4 and 20 alphanumeric characters.
 var bsOpt = {
-  // 'proxy'        : 'wordpress.dev',
-  'proxy'        : false,
+  'proxy'        : 'exp.dev',
+  // 'proxy'        : false,
   // 'tunnel'       : 'randomstring23232',
   'tunnel'       : false,
   'browser'      : 'google chrome'
@@ -37,7 +37,7 @@ var paths = {
   'destImg'      : 'assets/images/',
   'destCss'      : 'assets/css/',
   'destJs'       : 'assets/js/',
-  'htmlDir'      : 'src/html',
+  'htmlDir'      : 'src/html/',
   'phpFiles'     : ['*.php', './**/*.php']
 };
 
@@ -81,10 +81,11 @@ gulp.task('bs-reload', function() {
  * 5. Jade Tasks
 ------------------------------------------------------------------------------*/
 gulp.task('jade', function() {
-  gulp.src(paths.srcJade + '*.jade')
+  return gulp.src(paths.srcJade + '*.jade')
     .pipe($.data(function(file) { return require('./src/json/setting.json'); }))
+    .pipe($.plumber())
     .pipe($.jade({ pretty: true }))
-    .pipe(gulp.dest(paths.htmlDir))
+    .pipe(gulp.dest('src/html'))
     .pipe(browserSync.reload({ stream: true }));
 });
 
@@ -163,9 +164,7 @@ gulp.task('watch', function() {
 
 gulp.task('default', [
   'browser-sync',
-  'scss',
   'jade',
-  'js',
   'sprite',
   'watch'
 ]);
