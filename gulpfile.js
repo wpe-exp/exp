@@ -38,6 +38,7 @@ var paths = {
   'destCss'      : 'assets/css/',
   'destJs'       : 'assets/js/',
   'htmlDir'      : 'src/html',
+  'htmlFiles'    : 'src/html/*.html',
   'phpFiles'     : ['*.php', './**/*.php']
 };
 
@@ -80,13 +81,13 @@ gulp.task('bs-reload', function() {
 /*------------------------------------------------------------------------------
  * 5. Jade Tasks
 ------------------------------------------------------------------------------*/
-gulp.task('jade', function() {
-  gulp.src(paths.srcJade + '*.jade')
-    .pipe($.data(function(file) { return require('./src/json/setting.json'); }))
-    .pipe($.jade({ pretty: true }))
-    .pipe(gulp.dest(paths.htmlDir))
-    .pipe(browserSync.reload({ stream: true }));
-});
+// gulp.task('jade', function() {
+//  gulp.src(paths.srcJade + '*.jade')
+//    .pipe($.data(function(file) { return require('./src/json/setting.json'); }))
+//    .pipe($.jade({ pretty: true }))
+//    .pipe(gulp.dest(paths.htmlDir))
+//    .pipe(browserSync.reload({ stream: true }));
+//});
 
 /*------------------------------------------------------------------------------
  * 6. js Tasks
@@ -154,17 +155,18 @@ gulp.task('sprite', function() {
  * 9. gulp Tasks
 ------------------------------------------------------------------------------*/
 gulp.task('watch', function() {
-  gulp.watch([paths.srcJade + '**/*.jade'], ['jade']);
+//  gulp.watch([paths.srcJade + '**/*.jade'], ['jade']);
   gulp.watch([paths.srcJs + '**/*.js'], ['js', 'js:hint']);
   gulp.watch([paths.srcScss + '**/*.scss'], ['scss']);
   gulp.watch([paths.srcImg + 'sprite/*.png'], ['sprite']);
   gulp.watch([paths.phpFiles], ['bs-reload']);
+  gulp.watch([paths.htmlFiles], ['bs-reload']);
 });
 
 gulp.task('default', [
   'browser-sync',
   'scss',
-  'jade',
+  //'jade',
   'js',
   'sprite',
   'watch'
