@@ -18,6 +18,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+  <div id="fb-root"></div>
 
 	<div data-offcanvas class="off-canvas-wrap">
 		<div class="l-container inner-wrap">

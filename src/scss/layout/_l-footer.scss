@@ -1,1 +1,48 @@
 @charset 'utf-8';
+
+.l-footer {
+    &__banner {
+        text-align: center;
+        padding-bottom: 20px;
+        @include grid-row;
+    }
+}
+
+.fb-area {
+    background-color: #FFF;
+    &__inner {
+        @include grid-row;
+        padding: 30px 0;
+    }
+}
+
+.footer-bot {
+    background-color: #333;
+    &__inner{
+        @include grid-row;
+        text-align: center;
+        padding-top: 100px;
+    }
+    &__logo {
+         margin-bottom: 38px;
+    }
+    &__list {
+        margin-bottom: 60px;
+    }
+    &__item {
+        &:first-child {
+            margin-left: 0px;
+        }
+        display: inline;
+        margin-left: 15px;
+    }
+}
+
+#fb-root {
+    display: none;
+}
+ 
+.fb_iframe_widget, .fb_iframe_widget span,
+.fb_iframe_widget span iframe[style] {
+    width: 100% !important;
+}

@@ -4,5 +4,6 @@
     if((typeof $.prototype.foundation === 'function')) {
       $(document).foundation();
     }
+
   });
 })(jQuery);
