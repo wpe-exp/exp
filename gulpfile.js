@@ -81,11 +81,11 @@ gulp.task('bs-reload', function() {
  * 5. Jade Tasks
 ------------------------------------------------------------------------------*/
 gulp.task('jade', function() {
-  gulp.src(paths.srcJade + '*.jade')
-    .pipe($.data(function(file) { return require('./src/json/setting.json'); }))
-    .pipe($.jade({ pretty: true }))
-    .pipe(gulp.dest(paths.htmlDir))
-    .pipe(browserSync.reload({ stream: true }));
+ gulp.src(paths.srcJade + '*.jade')
+   .pipe($.data(function(file) { return require('./src/json/setting.json'); }))
+   .pipe($.jade({ pretty: true }))
+   .pipe(gulp.dest(paths.htmlDir))
+   .pipe(browserSync.reload({ stream: true }));
 });
 
 /*------------------------------------------------------------------------------
@@ -163,9 +163,7 @@ gulp.task('watch', function() {
 
 gulp.task('default', [
   'browser-sync',
-  'scss',
   'jade',
-  'js',
   'sprite',
   'watch'
 ]);
