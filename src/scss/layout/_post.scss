@@ -7,6 +7,7 @@
   font-weight: bold;
   text-align: center;
   margin: 0;
+  padding-top: 1em;
   padding-bottom: 1em;
   @media #{$small-only} {
     background-color: #fff;
@@ -24,6 +25,7 @@
   }
   @media #{$medium-up} {
     font-size: rem-calc(40);
+    padding-top: 2em;
     &__num {
       font-size: rem-calc(22);
     }
@@ -36,7 +38,7 @@
 /* postArchive
 ---------------------------------------- */
 %postArchiveRight {
-  margin-left: 140px;
+  margin-left: 130px;
   @media #{$medium-up} {
     margin-left: 190px;
   }
@@ -46,12 +48,12 @@
     @extend %group;
     display: block;
     background-color: #fff;
-    padding: 10px 20px;
+    padding: 10px;
   }
   &__imgWrap {
     position: relative;
     float: left;
-    margin-right: 20px;
+    margin-right: 10px;
     border-radius: 2px;
     overflow: hidden;
     img {
@@ -70,6 +72,7 @@
     color: $colorText;
     margin-bottom: 10px;
     line-height: 1em;
+    overflow: hidden;
     time {
       font-size: rem-calc(10);
       margin-right: .8em;
@@ -83,6 +86,7 @@
     }
     span {
       font-size: rem-calc(10);
+      white-space: nowrap;
     }
   }
   &__title {
@@ -158,7 +162,7 @@
       font-size: rem-clac(12);
     }
   }
-  .catLabel {
+  &__label {
     float: right;
     margin-top: 2px;
   }
@@ -198,7 +202,7 @@
       span {
         font-size: rem-calc(24);
       }
-      .catLabel {
+      &__label {
         margin-top: 8px;
         @include label(
           $padding: rem-calc(6 12),

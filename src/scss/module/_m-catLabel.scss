@@ -2,6 +2,10 @@
 /* post
 ---------------------------------------- */
 .catLabel {
+  @include label(
+    $padding: rem-calc(6 20),
+    $bg: $colorText
+  );
   &--blog {
     @include label(
       $padding: rem-calc(6 20),
