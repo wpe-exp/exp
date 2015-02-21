@@ -155,7 +155,7 @@ gulp.task('sprite', function() {
 ------------------------------------------------------------------------------*/
 gulp.task('watch', function() {
   gulp.watch([paths.srcJade + '**/*.jade'], ['jade']);
-  gulp.watch([paths.srcJs + '**/*.js}'], ['js', 'js:hint']);
+  gulp.watch([paths.srcJs + '**/*.js'], ['js', 'js:hint']);
   gulp.watch([paths.srcScss + '**/*.scss'], ['scss']);
   gulp.watch([paths.srcImg + 'sprite/*.png'], ['sprite']);
   gulp.watch([paths.phpFiles], ['bs-reload']);

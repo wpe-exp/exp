@@ -1,8 +1,9 @@
 header.l-header
   .l-header__inner
+    div.tab-bar.small-nav-bar.row(data-topbar="")
     h1.siteLogo: img(src="/assets/images/page/common/icon_exp.svg", alt="exp")
-    nav.globalNav
-      ul.globalNav__list
+    nav.globalNavSp
+      ul.globalNavSp__list
         - var items = {about: 'About', category: 'Category', member: 'Memer'}
         for val, key in items
           li(class="globalNav__item globalNav__item--#{key}"): +link('',val)

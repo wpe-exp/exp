@@ -1,5 +1,8 @@
 (function($){
   $(document).ready(function(){
-    var $body = $('body');
+
+    if((typeof $.prototype.foundation === 'function')) {
+      $(document).foundation();
+    }
   });
 })(jQuery);
