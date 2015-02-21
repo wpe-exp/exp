@@ -15,7 +15,7 @@ get_header(); ?>
 
 <section>
 	<div class="l-row">
-		<h2 class="pageTitle">ブログ記事一覧<span class="pageTitle__num">1-10件</span><span class="pageTitle__total">(全20件)</span></h2>
+		<h2 class="pageTitle">ブログ記事一覧</h2>
 	</div>
 	<div class="l-row">
 		<div id="main" class="l-main">
@@ -62,5 +62,4 @@ get_header(); ?>
 	</div><!-- /.l-row -->
 </section>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

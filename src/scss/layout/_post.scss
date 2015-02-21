@@ -7,6 +7,7 @@
   font-weight: bold;
   text-align: center;
   margin: 0;
+  padding-top: 1em;
   padding-bottom: 1em;
   @media #{$small-only} {
     background-color: #fff;
@@ -24,6 +25,7 @@
   }
   @media #{$medium-up} {
     font-size: rem-calc(40);
+    padding-top: 2em;
     &__num {
       font-size: rem-calc(22);
     }
