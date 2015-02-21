@@ -42,5 +42,5 @@ get_header(); ?>
     </main><!-- #main -->
   </div><!-- #primary -->
 
-<?php getexpidebar(); ?>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

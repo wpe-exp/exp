@@ -8,16 +8,8 @@
  */
 ?>
 
-	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'exp' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'exp' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'exp' ), 'exp', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+		</div><!-- /.l-container -->
+	</div><!-- /.off-canvas-wrap -->
 
 <?php wp_footer(); ?>
 
