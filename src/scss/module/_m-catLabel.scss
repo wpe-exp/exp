@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* post
+---------------------------------------- */
+.catLabel {
+  &--blog {
+    @include label(
+      $padding: rem-calc(6 20),
+      $bg: $colorCatBlog
+    );
+  }
+}
