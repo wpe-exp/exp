@@ -27,17 +27,17 @@ var bsOpt = {
 // basic locations
 var paths = {
   'root'         : './',
-  'srcDir'       : './src/',
-  'srcImg'       : './src/images/',
-  'srcJade'      : './src/jade/',
-  'srcJs'        : './src/js/',
-  'srcJson'      : './src/json/',
-  'srcScss'      : './src/scss/',
-  'destDir'      : './assets/',
-  'destImg'      : './assets/images/',
-  'destCss'      : './assets/css/',
-  'destJs'       : './assets/js/',
-  'htmlDir'      : './src/html',
+  'srcDir'       : 'src/',
+  'srcImg'       : 'src/images/',
+  'srcJade'      : 'src/jade/',
+  'srcJs'        : 'src/js/',
+  'srcJson'      : 'src/json/',
+  'srcScss'      : 'src/scss/',
+  'destDir'      : 'assets/',
+  'destImg'      : 'assets/images/',
+  'destCss'      : 'assets/css/',
+  'destJs'       : 'assets/js/',
+  'htmlDir'      : 'src/html',
   'phpFiles'     : ['*.php', './**/*.php']
 };
 
@@ -155,7 +155,7 @@ gulp.task('sprite', function() {
 ------------------------------------------------------------------------------*/
 gulp.task('watch', function() {
   gulp.watch([paths.srcJade + '**/*.jade'], ['jade']);
-  gulp.watch([paths.srcJs + '**/*.js'], ['js', 'js:hint']);
+  gulp.watch([paths.srcJs + '**/*.js}'], ['js', 'js:hint']);
   gulp.watch([paths.srcScss + '**/*.scss'], ['scss']);
   gulp.watch([paths.srcImg + 'sprite/*.png'], ['sprite']);
   gulp.watch([paths.phpFiles], ['bs-reload']);
