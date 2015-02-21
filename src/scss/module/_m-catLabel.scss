@@ -8,4 +8,7 @@
       $bg: $colorCatBlog
     );
   }
+  &--wordpress {
+    @include label();
+  }
 }

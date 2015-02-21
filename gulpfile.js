@@ -22,7 +22,7 @@ var bsOpt = {
   'proxy'        : false,
   // 'tunnel'       : 'randomstring23232',
   'tunnel'       : false,
-  'browser'      : 'google chrome canary'
+  'browser'      : 'google chrome'
 };
 // basic locations
 var paths = {
@@ -141,7 +141,7 @@ gulp.task('sprite', function() {
   var spriteData = gulp.src(paths.srcImg + 'sprite/*.png')
   .pipe($.spritesmith({
     imgName: 'sprite.png',
-    imgPath: '/' + paths.destImg + '/sprite.png',
+    imgPath: '/' + paths.destImg + 'sprite.png',
     cssName: '_ma-sprite.scss'
   }));
   spriteData.img

@@ -7,8 +7,11 @@ $fontCode          : Menlo, Monaco, Consolas, Courier New, monospace, "ヒラギ
 // Colum Base Width
 $maxWidth          : 940px;
 
+// Base margin
+$margin            : 80px;
+
 // Basic Colors
-$colorBlue         : #3595BE;
+$colorBlue         : #4ABBC1;
 $colorPink         : #C8569A;
 $colorYellow       : #DCAE20;
 $colorGreen        : #7DB347;
@@ -22,3 +25,12 @@ $colorLinkHover    : lighten($colorBlue, 9%);
 $colorSelection    : #accef7;
 // Category Colors
 $colorCatBlog      : #888;
+// SNS color
+$colorTw           : #55ACEE;
+$colorTwHover      : lighten($colorTw, 5%);
+$colorFb           : #3B5998;
+$colorFbHover      : lighten($colorFb, 5%);
+$colorPocket       : #D3505A;
+$colorPocketHover  : lighten($colorPocket, 5%);
+$colorHatena       : #0071C5;
+$colorHatenaHover  : lighten($colorHatena, 5%);
