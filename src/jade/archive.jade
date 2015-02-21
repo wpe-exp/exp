@@ -11,27 +11,28 @@ block prepend meta
   - var bodyClass = 'archive'
 block append meta
 block body
-  .l-container
-    include inc/layout/_l-header-sp
+  div.off-canvas-wrap(data-offcanvas)
+    div.l-container.inner-wrap
+      include inc/layout/_l-header
 
-    section
-      .l-row
-        h2.pageTitle ブログ記事一覧
-          span.pageTitle__num 1-10件
-          span.pageTitle__total (全20件)
-      .l-row
-        #main.l-main
-          - for (var i = 0; i < 10; i++)
-            article.postArchive: a(href="")
-              div.postArchive__imgWrap
-                img(src="/src/images/page/postArchive/img_thumbSample01.png", alt="")
-                span.postArchive__label.catLabel.catLabel--blog Category
-              div.postArchive__meta
-                time 2014.10.26
-                img(src="/src/images/page/postArchive/icon_authorSample01.png", alt="")
-                span Jhon Smith
-              h3.postArchive__title WordPressはメンテナンスが大事！改ざんされたサイトを復旧させるまでの道のり
-            //- /.postArchive
+      section
+        div.l-row
+          h2.pageTitle ブログ記事一覧
+            span.pageTitle__num 1-10件
+            span.pageTitle__total (全20件)
+        div.l-row
+          #main.l-main
+            - for (var i = 0; i < 10; i++)
+              article.postArchive: a(href="")
+                div.postArchive__imgWrap
+                  img(src="/src/images/page/postArchive/img_thumbSample01.png", alt="")
+                  span.postArchive__label.catLabel.catLabel--blog Category
+                div.postArchive__meta
+                  time 2014.10.26
+                  img(src="/src/images/page/postArchive/icon_authorSample01.png", alt="")
+                  span Jhon Smith
+                h3.postArchive__title WordPressはメンテナンスが大事！改ざんされたサイトを復旧させるまでの道のり
+              //- /.postArchive
 
     include inc/layout/_l-footer
 block append scriptFooter

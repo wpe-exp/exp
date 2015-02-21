@@ -21,6 +21,15 @@
   float: left;
   width: 68px;
 }
+.siteLogoSP {
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
 
 /* globalNav
 ---------------------------------------- */
@@ -45,3 +54,6 @@
     }
   }
 }
+.globalNavSp {}
+
+.tab-bar .menu-icon--globalSp span::after { top: 57%; }
