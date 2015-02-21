@@ -11,11 +11,8 @@
 .fb-area {
     background-color: #FFF;
     &__inner {
-        height: 210px;
         @include grid-row;
-        //あとで消す
-        text-align: center;
-        padding-top: 80px;
+        padding: 30px 0;
     }
 }
 
@@ -39,4 +36,13 @@
         display: inline;
         margin-left: 15px;
     }
+}
+
+#fb-root {
+    display: none;
+}
+ 
+.fb_iframe_widget, .fb_iframe_widget span,
+.fb_iframe_widget span iframe[style] {
+    width: 100% !important;
 }

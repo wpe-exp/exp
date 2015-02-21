@@ -11,7 +11,9 @@
       <footer class="l-footer">
         <div class="l-footer__banner"><img src="/assets/images/page/common/banner.png" alt="banner"></div>
         <div class="fb-area">
-            <div class="fb-area__inner">Facebook Area</div>
+            <div class="fb-area__inner">
+                <div class="fb-like-box" data-href="https://www.facebook.com/wp-e.org" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+            </div>
         </div>
         <div class="footer-bot">
             <div class="footer-bot__inner">
