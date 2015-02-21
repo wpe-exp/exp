@@ -28,7 +28,7 @@ function exp_setup() {
 	 * If you're building a theme based on _s, use a find and replace
 	 * to change '_s' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( '_s', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'exp', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -50,7 +50,7 @@ function exp_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', '_s' ),
+		'global_nav' => __( 'Global Menu', 'exp' ),
 	) );
 
 	/*
@@ -85,7 +85,7 @@ add_action( 'after_setup_theme', 'exp_setup' );
  */
 function exp_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', '_s' ),
+		'name'          => __( 'Sidebar', 'exp' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',

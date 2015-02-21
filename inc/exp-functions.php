@@ -95,3 +95,73 @@ if( !function_exists( 'the_custom_archive_title' ) ) {
 		echo $suffix;
 	}
 }
+
+/*
+ *
+ */
+function get_category_sub_menu() {
+	$args = array(
+		'type'                     => 'post',
+		'child_of'                 => 0,
+		'parent'                   => '',
+		'orderby'                  => 'name',
+		'order'                    => 'ASC',
+		'hide_empty'               => 1,
+		'hierarchical'             => 1,
+		'exclude'                  => '',
+		'include'                  => '',
+		'number'                   => '',
+		'taxonomy'                 => 'category',
+		'pad_counts'               => false
+
+	);
+	$categories = get_categories( $args );
+	$catlist = '<li clas="globalNav__item">Categories<ul>';
+	foreach ( $categories as $cat ) {
+		$catlist .= '<li><a href="' . get_category_link( $cat->term_id ) . '">' . $cat->name . '</a></li>';
+	}
+	$catlist .= '</ul></li>';
+
+	return $catlist;
+}
+
+/*
+ * Custom_Walker_nav Class
+ */
+class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
+
+	public function start_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat( "\t", $depth );
+		$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\">\n";
+	}
+
+	public function end_lvl( &$output, $depth = 0, $args = array() ) {
+
+		$args = array(
+			'type'                     => 'post',
+			'child_of'                 => 0,
+			'parent'                   => '',
+			'orderby'                  => 'name',
+			'order'                    => 'ASC',
+			'hide_empty'               => 1,
+			'hierarchical'             => 1,
+			'exclude'                  => '',
+			'include'                  => '',
+			'number'                   => '',
+			'taxonomy'                 => 'category',
+			'pad_counts'               => false
+
+		);
+		$categories = get_categories( $args );
+		$catlist = '<li>Categories<ul>';
+		foreach ( $categories as $cat ) {
+			$catlist .= '<li><a href="' . get_category_link( $cat->term_id ) . '">' . $cat->name . '</a></li>';
+		}
+		$catlist .= '</ul></li>';
+
+		$output .= "\n$indent<ul class=\"sub-menu\">\n";
+		$indent = str_repeat("\t", $depth);
+		$output .= "$indent\$catlist</ul>\n";
+	}
+
+}
