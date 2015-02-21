@@ -26,3 +26,6 @@ indent_size = 2
 [*.inc]
 indent_style = tab
 indent_size = 2
+
+[*.php]
+indent_style = tab

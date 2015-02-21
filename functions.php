@@ -1,116 +1,121 @@
 <?php
 /**
- * exp functions and definitions
+ * _s functions and definitions
  *
- * @package exp
+ * @package _s
  */
 
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-  $content_width = 640; /* pixels */
+	$content_width = 640; /* pixels */
 }
 
-if ( ! function_exists( 'expexpetup' ) ) :
+if ( ! function_exists( 'exp_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
- * Note that this function is hooked into the afterexpetup_theme hook, which
+ * Note that this function is hooked into the after_setup_theme hook, which
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function expexpetup() {
+function exp_setup() {
 
-  /*
-   * Make theme available for translation.
-   * Translations can be filed in the /languages/ directory.
-   * If you're building a theme based on exp, use a find and replace
-   * to change 'exp' to the name of your theme in all the template files
-   */
-  load_theme_textdomain( 'exp', get_template_directory() . '/languages' );
+	/*
+	 * Make theme available for translation.
+	 * Translations can be filed in the /languages/ directory.
+	 * If you're building a theme based on _s, use a find and replace
+	 * to change '_s' to the name of your theme in all the template files
+	 */
+	load_theme_textdomain( '_s', get_template_directory() . '/languages' );
 
-  // Add default posts and comments RSS feed links to head.
-  add_themeexpupport( 'automatic-feed-links' );
+	// Add default posts and comments RSS feed links to head.
+	add_theme_support( 'automatic-feed-links' );
 
-  /*
-   * Let WordPress manage the document title.
-   * By adding theme support, we declare that this theme does not use a
-   * hard-coded <title> tag in the document head, and expect WordPress to
-   * provide it for us.
-   */
-  add_themeexpupport( 'title-tag' );
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
 
-  /*
-   * Enable support for Post Thumbnails on posts and pages.
-   *
-   * @link http://codex.wordpress.org/Function_Reference/add_themeexpupport#Post_Thumbnails
-   */
-  //add_themeexpupport( 'post-thumbnails' );
+	/*
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 */
+	//add_theme_support( 'post-thumbnails' );
 
-  // This theme uses wp_nav_menu() in one location.
-  register_nav_menus( array(
-    'primary' => __( 'Primary Menu', 'exp' ),
-  ) );
+	// This theme uses wp_nav_menu() in one location.
+	register_nav_menus( array(
+		'primary' => __( 'Primary Menu', '_s' ),
+	) );
 
-  /*
-   * Switch default core markup for search form, comment form, and comments
-   * to output valid HTML5.
-   */
-  add_themeexpupport( 'html5', array(
-    'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
-  ) );
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support( 'html5', array(
+		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
+	) );
 
-  /*
-   * Enable support for Post Formats.
-   * See http://codex.wordpress.org/Post_Formats
-   */
-  add_themeexpupport( 'post-formats', array(
-    'aside', 'image', 'video', 'quote', 'link',
-  ) );
+	/*
+	 * Enable support for Post Formats.
+	 * See http://codex.wordpress.org/Post_Formats
+	 */
+	add_theme_support( 'post-formats', array(
+		'aside', 'image', 'video', 'quote', 'link',
+	) );
 
-  // Set up the WordPress core custom background feature.
-  add_themeexpupport( 'custom-background', apply_filters( 'exp_custom_background_args', array(
-    'default-color' => 'ffffff',
-    'default-image' => '',
-  ) ) );
+	// Set up the WordPress core custom background feature.
+	add_theme_support( 'custom-background', apply_filters( 'exp_custom_background_args', array(
+		'default-color' => 'ffffff',
+		'default-image' => '',
+	) ) );
 }
-endif; // expexpetup
-add_action( 'afterexpetup_theme', 'expexpetup' );
+endif; // exp_setup
+add_action( 'after_setup_theme', 'exp_setup' );
 
 /**
  * Register widget area.
  *
- * @link http://codex.wordpress.org/Function_Reference/registerexpidebar
+ * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function exp_widgets_init() {
-  register_sidebar( array(
-    'name'          => __( 'Sidebar', 'exp' ),
-    'id'            => 'sidebar-1',
-    'description'   => '',
-    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</aside>',
-    'before_title'  => '<h1 class="widget-title">',
-    'after_title'   => '</h1>',
-  ) );
+	register_sidebar( array(
+		'name'          => __( 'Sidebar', '_s' ),
+		'id'            => 'sidebar-1',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
 }
 add_action( 'widgets_init', 'exp_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function expexpcripts() {
-  wp_enqueueexptyle( 'exp-style', getexptylesheet_uri() );
+function exp_scripts() {
 
-  wp_enqueueexpcript( 'exp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+  if( is_admin() ) return;
 
-  wp_enqueueexpcript( 'exp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+  // stylesheets
+  wp_enqueue_style( 'app', get_stylesheet_directory_uri() . '/assets/css/app.css' );
 
-  if ( isexpingular() && comments_open() && get_option( 'thread_comments' ) ) {
-    wp_enqueueexpcript( 'comment-reply' );
-  }
+  // javascripts
+  wp_deregister_script('jquery');
+  wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js', array() );
+  wp_enqueue_script( 'bundle', get_stylesheet_directory_uri() . '/assets/js/bundle.js', array( 'jquery' ) );
+
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 }
-add_action( 'wp_enqueueexpcripts', 'expexpcripts' );
+add_action( 'wp_enqueue_scripts', 'exp_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -136,3 +141,13 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load own file: class register customtypes.
+ */
+require get_template_directory() . '/inc/class_register-customtypes.php';
+
+/**
+ * Load own file: my-functions.
+ */
+require get_template_directory() . '/inc/exp-functions.php';

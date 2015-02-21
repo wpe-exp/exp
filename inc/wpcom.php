@@ -4,7 +4,7 @@
  *
  * This file is centrally included from `wp-content/mu-plugins/wpcom-theme-compat.php`.
  *
- * @package exp
+ * @package _s
  */
 
 /**
@@ -12,7 +12,7 @@
  *
  * @global array $themecolors
  */
-function exp_wpcomexpetup() {
+function exp_wpcom_setup() {
 	global $themecolors;
 
 	// Set theme colors for third party services.
@@ -26,4 +26,4 @@ function exp_wpcomexpetup() {
 		);
 	}
 }
-add_action( 'afterexpetup_theme', 'exp_wpcomexpetup' );
+add_action( 'after_setup_theme', 'exp_wpcom_setup' );
