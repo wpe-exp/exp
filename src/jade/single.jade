@@ -1,0 +1,35 @@
+include inc/core/_config
+extends inc/core/_base
+block title
+  - var title = ''
+  title= title
+block prepend meta
+  - var sitename = name
+  - var keywords = page.top.keywords
+  - var description = page.top.description
+  - var ogpimage = page.top.ogpimage
+  - var bodyClass = 'single'
+block append meta
+block body
+  div.l-container
+    include inc/layout/_l-header
+
+    .l-row
+      #main.l-main
+        article.post
+          header.postHeader
+            img(src="", alt="")
+            div.postHeader__meta
+              time 2014.10.26
+              img(src="", alt="")
+              span Jhon Smith
+              a.label Category
+            h2 WordPressはメンテナンスが大事！改ざんされたサイトを復旧させるまでの道のり
+          div.postContent.stylePost
+            p Test text.
+            a(href="") link
+          footer.postFooter
+
+
+    include inc/layout/_l-footer
+block append scriptFooter
