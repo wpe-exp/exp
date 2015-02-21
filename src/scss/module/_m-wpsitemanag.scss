@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* pageNav
+---------------------------------------- */
+.pageNav {
+  text-align: center;
+  margin: rem-calc(60) auto;
+  ul {
+    @extend %group;
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    li {
+      float: left;
+      margin: 0;
+      a {
+        background-color: $colorText;
+        color: #fff;
+        display: block;
+        padding: .2em .8em;
+        &:hover {
+          background-color: lighten($colorText, 9%);
+        }
+      }
+      span {
+        background-color: #fff;
+        display: block;
+        color: $colorText;
+        padding: .2em .8em;
+      }
+    }
+    @media #{$medium-up} {
+      li {
+        margin-left: .6em;
+        &:first-child {
+          margin-left: 0;
+        }
+        a, span {
+          padding: .2em 1.5em;
+        }
+      }
+    }
+  }
+}
