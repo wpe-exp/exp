@@ -3,7 +3,7 @@
 ---------------------------------------- */
 .pageNav {
   text-align: center;
-  margin: rem-calc(60) auto;
+  margin: rem-calc(60) auto 0;
   ul {
     @extend %group;
     list-style: none;
