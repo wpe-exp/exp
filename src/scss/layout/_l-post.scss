@@ -142,12 +142,21 @@
       margin-top: 50px;
     }
   }
+  &--page {
+    @extend .post--single;
+    &:before {
+      content: '';
+      display: table;
+    }
+  }
 }
 
 /* post
 ---------------------------------------- */
 .post {
-  &__header {}
+  &__header {
+    border-bottom: 2px solid $colorBg;
+  }
   &__image {
     max-width: 100%;
     // height: 140px;

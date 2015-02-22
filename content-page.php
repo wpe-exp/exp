@@ -6,22 +6,14 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  <header class="entry-header">
-    <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-  </header><!-- .entry-header -->
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'post post--page' ); ?>>
 
-  <div class="entry-content">
-    <?php the_content(); ?>
-    <?php
-      wp_link_pages( array(
-        'before' => '<div class="page-links">' . __( 'Pages:', 'exp' ),
-        'after'  => '</div>',
-      ) );
-    ?>
-  </div><!-- .entry-content -->
+	<header class="post__header">
+		<h1 class="post__title"><?php the_title(); ?></h1>
+	</header>
 
-  <footer class="entry-footer">
-    <?php edit_post_link( __( 'Edit', 'exp' ), '<span class="edit-link">', '</span>' ); ?>
-  </footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+	<div class="post__content stylePost">
+		<?php the_content(); ?>
+	</div>
+
+</article>
