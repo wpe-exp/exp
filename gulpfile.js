@@ -18,8 +18,8 @@ var gulp          = require('gulp'),
 // @param false or virtual host name of local machine such as . Set false to browser-sync start as server mode.
 // @param false or Subdomains which must be between 4 and 20 alphanumeric characters.
 var bsOpt = {
-  // 'proxy'        : 'exp.dev',
-  'proxy'        : false,
+  'proxy'        : 'exp.dev',
+  // 'proxy'        : false,
   // 'tunnel'       : 'randomstring23232',
   'tunnel'       : false,
   'browser'      : 'google chrome'
@@ -142,7 +142,7 @@ gulp.task('sprite', function() {
   var spriteData = gulp.src(paths.srcImg + 'sprite/*.png')
   .pipe($.spritesmith({
     imgName: 'sprite.png',
-    imgPath: '/' + paths.destImg + 'sprite.png',
+    imgPath: '../images/sprite.png',
     cssName: '_ma-sprite.scss'
   }));
   spriteData.img
