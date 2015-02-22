@@ -11,11 +11,39 @@ block prepend meta
   - var bodyClass = 'home'
 block append meta
 block body
-  .l-container
-    include inc/layout/_l-header
+  div.off-canvas-wrap(data-offcanvas)
+    div.l-container.inner-wrap
+      include inc/layout/_l-header
+      //- include inc/layout/_l-header-sp
 
-    #main.l-main
-      h1 Hello World.
+      div.mainImgWrap: img(src="/assets/images/page/front/img_main.png", alt="")
+
+      section.pageFront
+        header.l-row
+          h2.pageTitle  新着記事
+        div.l-row
+          #main.l-main
+            article.postLatest: a(href="")
+              div.postLatest__imgWrap
+                img(src="/assets/images/page/front/img_thumbSampleLarge01.png", alt="")
+                span.postArchive__label.catLabel.catLabel--blog Category
+              div.postLatest__meta
+                time 2014.10.26
+                img(src="/assets/images/page/postArchive/icon_authorSample01.png", alt="")
+                span Jhon Smith
+              h3.postLatest__title WordPressはメンテナンスが大事！改ざんされたサイトを復旧させるまでの道のり
+
+            - for (var i = 0; i < 9; i++)
+              article.postArchive: a(href="")
+                div.postArchive__imgWrap
+                  img(src="/assets/images/page/postArchive/img_thumbSample01.png", alt="")
+                  span.postArchive__label.catLabel.catLabel--blog Category
+                div.postArchive__meta
+                  time 2014.10.26
+                  img(src="/assets/images/page/postArchive/icon_authorSample01.png", alt="")
+                  span Jhon Smith
+                h3.postArchive__title WordPressはメンテナンスが大事！改ざんされたサイトを復旧させるまでの道のり
+              //- /.postArchive
 
     include inc/layout/_l-footer
 block append scriptFooter

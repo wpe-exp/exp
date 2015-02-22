@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* postLatest
+---------------------------------------- */
+.postLatest {
+  @extend .postArchive;
+  &__imgWrap {
+    @extend .postArchive__imgWrap;
+  }
+  &__label {
+    @extend .postArchive__label;
+  }
+  &__meta {
+    @extend .postArchive__meta;
+  }
+  &__title {
+    @extend .postArchive__title;
+  }
+  @media #{$small-only} {
+    border-bottom: 2px solid #d8dada;
+  }
+  @media #{$medium-up} {
+    #{&}__imgWrap {
+      img {
+        width: 340px;
+        height: 340px;
+      }
+    }
+    #{&}__meta {
+      margin-top: .2em;
+      margin-left: 360px;
+      time, span {
+        font-size: rem-calc(24);
+      }
+    }
+    #{&}__title {
+      margin-left: 360px;
+      font-size: rem-calc(36);
+    }
+  }
+}
