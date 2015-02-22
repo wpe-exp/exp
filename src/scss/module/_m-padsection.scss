@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* author
+---------------------------------------- */
+.post__content {
+  #padSection {
+    border: none !important;
+  // margin: 20px;
+  // background: #ffffff;
+  // border-top: 2px solid $colorBg;
+    @media #{$medium-up} {
+      // margin: 40px $margin;
+      // margin-bottom: $margin;
+      padding: 40px $margin !important;
+      padding-bottom: 0 !important;
+    }
+  }
+}
+

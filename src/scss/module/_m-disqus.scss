@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* disqus
+---------------------------------------- */
+#disqus_thread {
+  padding: 20px;
+  background: #ffffff;
+  border-top: 2px solid $colorBg;
+
+  @media #{$medium-up} {
+    padding: 40px $margin;
+    padding-bottom: $margin;
+  }
+}
