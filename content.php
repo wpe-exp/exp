@@ -7,7 +7,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'postArchive' ); ?>>
 	<a href="<?php the_permalink(); ?>">
 		<div class="postArchive__imgWrap">
-			<?php the_post_thumbnail( '' ); ?>
+			<?php the_post_thumbnail( 'thumb340x340' ); ?>
 			<?php $cat = get_primary_cat(); ?>
 			<span class="postArchive__label catLabel catLabel--<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></span>
 		</div>

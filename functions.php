@@ -46,7 +46,16 @@ function exp_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
+
+	/*
+	 * Extra image sizes.
+	 */
+	set_post_thumbnail_size( 360, 180, true );
+	add_image_size( 'thumb340x340', 340, 340, true );
+	add_image_size( 'thumb680x680', 680, 680, true );
+	add_image_size( 'thumb640x280', 640, 280, true );
+	add_image_size( 'thumb940x400', 940, 400, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(

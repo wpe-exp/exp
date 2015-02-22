@@ -15,7 +15,7 @@ foreach ( $cats as $cat) {
 ?>
 
 	<header class="post__header">
-		<?php the_post_thumbnail( '' ); ?>
+		<?php ( wp_is_mobile() ) ? the_post_thumbnail( 'thumb640x280' ) : the_post_thumbnail( 'thumb940x400' ); ?>
 		<div class="post__meta">
 			<time><?php the_time( get_option( 'date_format' ) ); ?></time><?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?><span><?php echo get_the_author_meta( 'display_name' ); ?></span><?php echo $catHtml; ?>
 		</div>

@@ -1,7 +1,7 @@
 <article class="postLatest">
 	<a href="<?php the_permalink(); ?>">
 		<div class="postLatest__imgWrap">
-			<?php the_post_thumbnail( '' ); ?>
+			<?php ( wp_is_mobile() ) ? the_post_thumbnail( 'thumb340x340' ) : the_post_thumbnail( 'thumb680x680' ); ?>
 			<?php $cat = get_primary_cat(); ?>
 		</div>
 		<div class="postLatest__meta">
