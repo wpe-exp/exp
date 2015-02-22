@@ -6,13 +6,13 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'post--single' ); ?>>
 
-<?php
-$cats = get_the_category();
-$catHtml = '';
-foreach ( $cats as $cat) {
-	$catHtml .= '<a href="' . get_category_link( $cat->cat_ID ) . '" class="post__label catLabel catLabel--wordpress">' . $cat->name . '</a>';
-}
-?>
+	<?php // Category label
+	$cats = get_the_category();
+	$catHtml = '';
+	foreach ( $cats as $cat) {
+		$catHtml .= '<a href="' . get_category_link( $cat->cat_ID ) . '" class="post__label catLabel catLabel--wordpress">' . $cat->name . '</a>';
+	}
+	?>
 
 	<header class="post__header">
 		<?php ( wp_is_mobile() ) ? the_post_thumbnail( 'thumb640x280' ) : the_post_thumbnail( 'thumb940x400' ); ?>
@@ -39,4 +39,3 @@ foreach ( $cats as $cat) {
 	</div>
 
 </article>
-
