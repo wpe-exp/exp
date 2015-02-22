@@ -140,7 +140,7 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 		);
 		$categories = get_categories( $args );
-		$catlist = '<li>Categories<ul>';
+		$catlist = '<li class="has-children">Categories<ul class="globalnav__subList">';
 		foreach ( $categories as $cat ) {
 			$catlist .= '<li><a href="' . get_category_link( $cat->term_id ) . '">' . $cat->name . '</a></li>';
 		}
