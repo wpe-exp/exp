@@ -136,6 +136,12 @@
 ---------------------------------------- */
 .post {
   background-color: #fff;
+  &--single {
+    margin-top: 20px;
+    @media #{$medium-up} {
+      margin-top: 50px;
+    }
+  }
 }
 
 /* post

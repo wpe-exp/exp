@@ -13,16 +13,20 @@
 
 get_header(); ?>
 
+<?php if ( !is_paged() ): ?>
+	<div class="mainImgWrap"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/front/img_main.png" alt=""></div>
+<?php endif; ?>
+
 <section>
 	<div class="l-row">
-		<h2 class="pageTitle">ブログ記事一覧</h2>
+		<h2 class="pageTitle">新着記事一覧</h2>
 	</div>
 	<div class="l-row">
 		<div id="main" class="l-main">
 
 			<?php if ( have_posts() ) : ?>
 
-				<?php /* Start the Loop */ ?>
+				<?php /* Start the Loop */ $i = 0;?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
 					<?php
@@ -30,7 +34,12 @@ get_header(); ?>
 						 * If you want to override this in a child theme, then include a file
 						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 						 */
-						get_template_part( 'content', get_post_format() );
+						if ( $i === 0 && !is_paged() ) {
+							get_template_part( 'templates/front', 'latestPost' );
+							$i++;
+						} else {
+							get_template_part( 'content', get_post_format() );
+						}
 					?>
 
 				<?php endwhile; ?>
