@@ -21,21 +21,18 @@
 		</div>
 		<h1 class="post__title"><?php the_title(); ?></h1>
 		<div class="snsShare">
-			<ul class="snsShare__list">
-				<li class="snsShare__item"><a href="" class="btnTw">twitter</a>
-				</li>
-				<li class="snsShare__item"><a href="" class="btnFb">facebook</a>
-				</li>
-				<li class="snsShare__item"><a href="" class="btnPocket">pocket</a>
-				</li>
-				<li class="snsShare__item"><a href="" class="btnHatena">Hatena</a>
-				</li>
-			</ul>
+		<?php if(function_exists("wp_social_bookmarking_light_output_e")) wp_social_bookmarking_light_output_e(null, get_permalink(), the_title("", "", false)); ?>
 		</div>
 	</header>
 
 	<div class="post__content stylePost">
 		<?php the_content(); ?>
 	</div>
+	<aside class="widget">
+		<div class="snsShare">
+			<h2 class="snsShare__title">記事をシェアする</h2>
+			<?php if(function_exists("wp_social_bookmarking_light_output_e")) wp_social_bookmarking_light_output_e(null, get_permalink(), the_title("", "", false)); ?>
+		</div>
+	</aside>
 
 </article>
