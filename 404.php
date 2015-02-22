@@ -7,18 +7,18 @@
 
 get_header(); ?>
 
-  <div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
+	<div class="l-row">
+		<div id="main" class="l-main">
 
-      <section class="error-404 not-found">
-        <header class="page-header">
+      <section class="error-404 not-found post post--404">
+        <header class="post__header">
           <h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'exp' ); ?></h1>
-        </header><!-- .page-header -->
+        </header><!-- .post__header -->
 
-        <div class="page-content">
+        <div class="post__content">
           <p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'exp' ); ?></p>
 
-          <?php getexpearch_form(); ?>
+          <?php get_search_form(); ?>
 
           <?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
@@ -47,10 +47,10 @@ get_header(); ?>
 
           <?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
 
-        </div><!-- .page-content -->
+        </div><!-- .post__content -->
       </section><!-- .error-404 -->
 
-    </main><!-- #main -->
-  </div><!-- #primary -->
+		</div><!-- /.l-main -->
+	</div><!-- /.l-row -->
 
 <?php get_footer(); ?>

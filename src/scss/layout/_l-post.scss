@@ -149,6 +149,13 @@
       display: table;
     }
   }
+  &--404 {
+    @extend .post--single;
+    padding: 20px;
+    @media #{$medium-up} {
+      padding: 40px;
+    }
+  }
 }
 
 /* post
