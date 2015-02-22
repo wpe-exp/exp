@@ -23,7 +23,9 @@ function show_wp_query() {
 		echo '</code></pre>';
 	}
 }
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // add_filter( 'wp_footer', 'show_wp_query' );
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 /*
  * Is 1st post in the roop
