@@ -11,15 +11,17 @@
  * @package exp
  */
 
+$is_as_front = !is_paged() && !is_category() && !is_tag();
+
 get_header(); ?>
 
-<?php if ( !is_paged() ): ?>
+<?php if ( $is_as_front ): ?>
 	<div class="mainImgWrap"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/front/img_main.png" alt=""></div>
 <?php endif; ?>
 
 <section>
 	<div class="l-row">
-		<h2 class="pageTitle">新着記事一覧</h2>
+		<h2 class="pageTitle"><?php the_custom_archive_title(); ?></h2>
 	</div>
 	<div class="l-row">
 		<div id="main" class="l-main">
@@ -34,7 +36,7 @@ get_header(); ?>
 						 * If you want to override this in a child theme, then include a file
 						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 						 */
-						if ( $i === 0 && !is_paged() ) {
+						if ( $i === 0 && $is_as_front ) {
 							get_template_part( 'templates/front', 'latestPost' );
 							$i++;
 						} else {

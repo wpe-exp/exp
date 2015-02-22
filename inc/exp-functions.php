@@ -58,43 +58,29 @@ if ( !function_exists( 'get_primary_cat' ) ) {
 if( !function_exists( 'the_custom_archive_title' ) ) {
 	function the_custom_archive_title() {
 		global $wp_query;
-		$event_year = ( isset($wp_query->query['event-year']) && $wp_query->query['event-year'] ) ? true : false;
 
-		$suffix = 'の一覧';
+		$suffix = '記事一覧';
 		if( is_category() ) {
+
+			// for category archive
 			single_cat_title();
+			$suffix = 'の' . $suffix;
+
 		} elseif ( is_tag() ) {
+
+			// for tag archive
 			single_tag_title();
-			$suffix = '向けニュースの一覧';
-		} elseif ( is_post_type_archive() ) {
-			if ( is_tax() ) {
-				$i = 0;
-				foreach ( $wp_query->tax_query->queries as $tax_query ) {
-					$tax = (get_taxonomy( $tax_query['taxonomy'] ));
-					echo $tax->labels->singular_name . ': ';
-					$j = 0;
-					foreach ( get_the_terms( null, $tax->name ) as $term ) {
-						if ( $j > 0 ) echo ',';
-						echo ' ' . $term->name . ' ';
-						$j++;
-					}
-					$i++;
-				}
-				echo 'の';
-				$suffix = '一覧';
-			} elseif ( $event_year ) {
-				echo $wp_query->query_vars['event-year'] . '年度の';
-				$suffix = '一覧';
-			} elseif ( is_search() ) {
-				echo ' "' . esc_html( $_GET['s'] ) . '" に関する';
-				$suffix = '一覧';
-			}
-			post_type_archive_title();
-		} elseif ( $event_year ) {
-			echo $wp_query->query_vars['event-year'] . '年度のニュース';
-			$suffix = '一覧';
+			$suffix = 'の' . $suffix;
+
+		} else {
+
+			// for post type post archive
+			$suffix = '新着' . $suffix;
+
 		}
+
 		echo $suffix;
+
 	}
 }
 
