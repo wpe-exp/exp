@@ -15,7 +15,20 @@
 	?>
 
 	<header class="post__header">
-		<?php ( wp_is_mobile() ) ? the_post_thumbnail( 'thumb640x280' ) : the_post_thumbnail( 'thumb940x400' ); ?>
+		<?php // post thumbnail
+		if ( wp_is_mobile() ) {
+
+			$size = 'thumb640x280';
+			$attr = array( 'class'	=> 'attachment-' . $size . ' post__image' );
+
+		} else {
+
+			$size = 'thumb940x400';
+			$attr = array( 'class'	=> 'attachment-' . $size . ' post__image' );
+
+		}
+		the_post_thumbnail( $size, $attr );
+		?>
 		<div class="post__meta">
 			<time><?php the_time( get_option( 'date_format' ) ); ?></time><?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?><span><?php echo get_the_author_meta( 'display_name' ); ?></span><?php echo $catHtml; ?>
 		</div>
