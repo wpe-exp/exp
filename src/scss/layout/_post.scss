@@ -1,0 +1,461 @@
+@charset "utf-8";
+/* pageTitle
+---------------------------------------- */
+.pageTitle {
+  font-size: rem-calc(20);
+  letter-spacing: .08em;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 1em;
+  @media #{$small-only} {
+    background-color: #fff;
+    margin-bottom: 0;
+    padding-top: 1em;
+  }
+  &__num {
+    font-size: rem-calc(14);
+    font-weight: normal;
+    margin-left: .8em;
+  }
+  &__total {
+    font-size: rem-calc(10);
+    font-weight: normal;
+  }
+  @media #{$medium-up} {
+    font-size: rem-calc(40);
+    &__num {
+      font-size: rem-calc(22);
+    }
+    &__total {
+      font-size: rem-calc(16);
+    }
+  }
+}
+
+/* postArchive
+---------------------------------------- */
+%postArchiveRight {
+  margin-left: 140px;
+  @media #{$medium-up} {
+    margin-left: 190px;
+  }
+}
+.postArchive {
+  a {
+    @extend %group;
+    display: block;
+    background-color: #fff;
+    padding: 10px 20px;
+  }
+  &__imgWrap {
+    position: relative;
+    float: left;
+    margin-right: 20px;
+    border-radius: 2px;
+    overflow: hidden;
+    img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  &__label {
+    font-size: rem-calc(12);
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  &__meta{
+    @extend %postArchiveRight;
+    color: $colorText;
+    margin-bottom: 10px;
+    line-height: 1em;
+    time {
+      font-size: rem-calc(10);
+      margin-right: .8em;
+    }
+    img {
+      margin-top: -1px;
+      margin-right: .6em;
+      width: 16px;
+      height: 16px;
+      border-radius: 100px;
+    }
+    span {
+      font-size: rem-calc(10);
+    }
+  }
+  &__title {
+    @extend %postArchiveRight;
+    font-size: rem-calc(14);
+    letter-spacing: .04em;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  @media #{$medium-up} {
+    a {
+      padding: 20px;
+      margin-top: 10px;
+    }
+    &__imgWrap {
+      img {
+        width: 170px;
+        height: 170px;
+      }
+    }
+    &__label {
+      font-size: rem-calc(16px);
+    }
+    &__meta {
+      margin-bottom: 20px;
+      line-height: 26px;
+      time {
+        font-size: rem-calc(18);
+      }
+      img {
+        width: 26px;
+        height: 26px;
+      }
+      span {
+        font-size: rem-calc(18);
+      }
+    }
+    &__title {
+      font-size: rem-calc(24);
+      font-weight: bold;
+    }
+  }
+}
+
+/* post
+---------------------------------------- */
+.post {
+  background-color: #fff;
+}
+
+/* post
+---------------------------------------- */
+.post {
+  &__header {}
+  &__image {
+    max-width: 100%;
+    // height: 140px;
+  }
+  &__meta {
+    margin: rem-calc(20);
+    margin-bottom: 0;
+    time {
+      font-size: 14px;
+      margin-right: 10px;
+    }
+    img {
+      max-width: 20px;
+      vertical-align: middle;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+    span {
+      font-size: rem-clac(12);
+    }
+  }
+  .catLabel {
+    float: right;
+    margin-top: 2px;
+  }
+  &__title {
+    margin: 20px;
+    margin-bottom: 0;
+    font-size: rem-calc(24);
+    font-weight: bold;
+    line-height: 1.5;
+  }
+  &__content {
+    border-bottom: 2px solid $colorBg;
+    padding-bottom: 40px;
+  }
+}
+
+/* media */
+@media #{$medium-up} {
+  .post {
+    &__header {
+    }
+    &__image {
+      max-width: 100%;
+      height: auto;
+    }
+    &__meta {
+      margin: 80px;
+      margin-bottom: 0;
+      time {
+        font-size: rem-calc(24);
+        margin-right: 20px;
+      }
+      img {
+        max-width: 30px;
+        vertical-align: top;
+        margin-right: 10px;
+      }
+      span {
+        font-size: rem-calc(24);
+      }
+      .catLabel {
+        margin-top: 8px;
+        @include label(
+          $padding: rem-calc(6 12),
+          $text-size: rem-calc(16)
+        );
+      }
+    }
+    &__title {
+      margin: 30px 80px;
+      font-size: rem-calc(36);
+      font-weight: bold;
+    }
+    &__content {
+      padding-top: 40px;
+      padding-bottom: 80px;
+    }
+  }
+}
+
+/* stylePost
+---------------------------------------- */
+.stylePost {
+  h1 {
+    font-size: rem-calc(28);
+    margin: 20px;
+  }
+  h2 {
+    position: relative;
+    font-size: rem-calc(28);
+    letter-spacing: -0.4px;
+    line-height: 1.4;
+    margin: 20px 20px 40px 0;
+    padding: 14px 0 14px 18px;
+    border-left: 4px solid $colorBlue;
+    border-bottom: 4px solid #999999;
+    &:before {
+      position: absolute;
+      bottom: -14px;
+      left: -4px;
+      content: '';
+      @include corner-triangle(top-right, 10px, $colorBlue);
+    }
+    &:after {
+      position: absolute;
+      bottom: -4px;
+      left: -3px;
+      content: '';
+      @include sprite-ir($ttl-bkg-h2, 0.5);
+    }
+  }
+  h3 {
+    margin: 30px 20px;
+    margin-top: 30px;
+    font-size: rem-calc(24);
+    font-weight: bold;
+    line-height: 1.4;
+  }
+  h4 {
+    margin: 20px;
+    font-size: rem-calc(20);
+    line-height: 1.4;
+  }
+  h5 {
+    margin: 20px;
+    font-size: rem-calc(16);
+    line-height: 1.4;
+  }
+  h6 {
+    margin: 20px;
+    font-size: rem-calc(16);
+    line-height: 1.4;
+  }
+  p {
+    font-size: rem-calc(16);
+    line-height: 2.0;
+    margin: 0 20px;
+    margin-bottom: 40px;
+  }
+  a {}
+  ul, ol {
+    margin: 20px;
+    margin-left: 40px;
+    li {
+      ul {
+        margin: 10px;
+        margin-left: 20px;
+      }
+    }
+  }
+  dl {
+    margin: 20px;
+    dt {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding-bottom: 4px;
+      border-bottom: 2px solid $colorText;
+      line-height: 1.0;
+    }
+    dd {
+      margin-left: 10px;
+      margin-bottom: 10px;
+      letter-spacing: -0.4px;
+      line-height: 1.8;
+    }
+  }
+  blockquote {
+    position: relative;
+    margin: 20px;
+    padding: 14px;
+    padding-left: 50px;
+    border: 1px dotted $colorText;
+    &:before {
+      @include sprite-ir($icon-quatation, 0.5);
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      content: '';
+      margin-right: 6px;
+    }
+  }
+  cite {
+    margin-top: 10px;
+  }
+  table {
+    margin: 20px auto;
+    display: block;
+    width: 90%;
+    thead {
+      display: none;
+    }
+    tbody {
+      display: block;
+      tr {
+        display: block;
+        th, td {
+          display: list-item;
+          list-style-type: none;
+        }
+      }
+    }
+    th {
+      border-bottom: 1px solid $colorBg;
+    }
+    td {}
+  }
+  pre {
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: $colorText;
+    color: #ffffff;
+    font-family: $fontCode;
+    font-size: rem-calc(12);
+    overflow-x: auto;
+    > code {
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-family: $fontCode;
+      white-space: pre;
+    }
+  }
+  code {
+    color: $colorText;
+    font-family: $fontCode;
+    background-color: $colorBg;
+    border-radius: 2px;
+  }
+  kbd {
+    padding: 2px 4px;
+    color: #ffffff;
+    font-family: $fontCode;
+    background-color: lighten($colorText, 6%);
+    border-radius: 2px;
+    border: 1px solid lighten($colorText, 30%);
+    box-shadow: 0px 2px 0 darken($colorText, 6%);
+  }
+  hr {
+    margin: 20px;
+  }
+}
+
+/* media */
+@media #{$medium-up} {
+  .stylePost {
+    h1 {
+      margin: 40px $margin;
+    }
+    h2 {
+      margin: 40px 80px 40px 60px;
+      padding: 14px 0 14px 18px;
+      font-size: rem-calc(32)
+    }
+    h3 {
+      margin: 0 80px 40px 80px;
+      font-size: rem-calc(28);
+      font-weight: bold;
+    }
+    h4 {
+      margin: 30px $margin;
+      font-size: rem-calc(24);
+    }
+    h5 {
+      margin: 30px $margin;
+      font-size: rem-calc(20);
+    }
+    h6 {
+      margin: 30px $margin;
+      font-size: rem-calc(16);
+    }
+    p {
+      font-size: rem-calc(16);
+      line-height: 2.0;
+      margin: 0 80px;
+      margin-bottom: 40px;
+    }
+    pre {
+      margin: 0 80px 40px;
+      padding: 20px;
+      background-color: $colorText;
+      font-size: rem-calc(14);
+      > code {
+        font-size: rem-calc(14);
+      }
+      code {
+        font-size: rem-calc(14);
+      }
+    }
+    ul, ol {
+      margin: 20px $margin 20px 100px;
+      li {
+        ul,ol {
+          margin: 10px;
+          margin-left: 30px;
+        }
+      }
+    }
+    dl {
+      margin: 40px $margin;
+    }
+    blockquote {
+      margin: 20px $margin 40px;
+      padding: 20px;
+      padding-left: 50px;
+      &:before {
+        top: 18px;
+        left: 14px;
+      }
+    }
+    table {
+      margin: 20px $margin;
+      display: block;
+      width: auto;
+    }
+    hr {
+      margin: 40px $margin;
+    }
+  }
+}
