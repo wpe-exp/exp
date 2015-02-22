@@ -88,7 +88,7 @@
   &__title {
     @extend %postArchiveRight;
     font-size: rem-calc(14);
-    letter-spacing: .08em;
+    letter-spacing: .04em;
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -167,6 +167,7 @@
     margin-bottom: 0;
     font-size: rem-calc(24);
     font-weight: bold;
+    line-height: 1.5;
   }
   &__content {
     border-bottom: 2px solid $colorBg;
@@ -254,19 +255,22 @@
     margin-top: 30px;
     font-size: rem-calc(24);
     font-weight: bold;
-    line-height: 1.0;
+    line-height: 1.4;
   }
   h4 {
     margin: 20px;
     font-size: rem-calc(20);
+    line-height: 1.4;
   }
   h5 {
     margin: 20px;
     font-size: rem-calc(16);
+    line-height: 1.4;
   }
   h6 {
     margin: 20px;
     font-size: rem-calc(16);
+    line-height: 1.4;
   }
   p {
     font-size: rem-calc(16);
@@ -346,7 +350,9 @@
     margin-bottom: 20px;
     padding: 20px;
     background-color: $colorText;
-    font-size: rem-calc(14);
+    color: #ffffff;
+    font-family: $fontCode;
+    font-size: rem-calc(12);
     overflow-x: auto;
     > code {
       background: transparent;
@@ -371,11 +377,17 @@
     border: 1px solid lighten($colorText, 30%);
     box-shadow: 0px 2px 0 darken($colorText, 6%);
   }
+  hr {
+    margin: 20px;
+  }
 }
 
 /* media */
 @media #{$medium-up} {
   .stylePost {
+    h1 {
+      margin: 40px $margin;
+    }
     h2 {
       margin: 40px 80px 40px 60px;
       padding: 14px 0 14px 18px;
@@ -385,7 +397,6 @@
       margin: 0 80px 40px 80px;
       font-size: rem-calc(28);
       font-weight: bold;
-      line-height: 1.0;
     }
     h4 {
       margin: 30px $margin;
@@ -409,7 +420,13 @@
       margin: 0 80px 40px;
       padding: 20px;
       background-color: $colorText;
-      font-size: 14px;
+      font-size: rem-calc(14);
+      > code {
+        font-size: rem-calc(14);
+      }
+      code {
+        font-size: rem-calc(14);
+      }
     }
     ul, ol {
       margin: 20px $margin 20px 100px;
@@ -436,6 +453,9 @@
       margin: 20px $margin;
       display: block;
       width: auto;
+    }
+    hr {
+      margin: 40px $margin;
     }
   }
 }
