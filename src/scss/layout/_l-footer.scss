@@ -24,18 +24,19 @@
     padding-top: 100px;
   }
   &__logo {
-   margin-bottom: 38px;
- }
- &__list {
-  margin-bottom: 60px;
-}
-&__item {
-  &:first-child {
-    margin-left: 0px;
+    margin-bottom: 38px;
+   }
+  &__list {
+    margin-left: 0;
+    margin-bottom: 60px;
   }
-  display: inline;
-  margin-left: 15px;
-}
+  &__item {
+    &:first-child {
+      margin-left: 0px;
+    }
+    display: inline;
+    margin-left: 15px;
+  }
 }
 
 #fb-root {
