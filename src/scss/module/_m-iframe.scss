@@ -6,11 +6,9 @@
   .fb_iframe_widget {
     display: block;
     margin: 20px 0;
-    padding: 0 20px;
     width: 100% !important;
     @media #{$medium-up} {
       margin: 40px 0;
-      padding: 0 $margin;
       width: 100% !important;
     }
   }
@@ -21,11 +19,9 @@
   .oembed-gist {
     display: block;
     margin: 20px 0;
-    padding: 0 20px;
     width: 100% !important;
     @media #{$medium-up} {
       margin: 40px 0;
-      padding: 0 $margin;
       width: 100% !important;
     }
   }
