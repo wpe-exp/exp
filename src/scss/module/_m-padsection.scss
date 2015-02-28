@@ -3,14 +3,15 @@
 ---------------------------------------- */
 .post__content {
   #padSection {
+    padding: 0 !important;
     border: none !important;
-  // margin: 20px;
-  // background: #ffffff;
-  // border-top: 2px solid $colorBg;
+    #profileTxtSet {
+      > dd {
+        line-height: 1.6;
+      }
+    }
     @media #{$medium-up} {
-      // margin: 40px $margin;
-      // margin-bottom: $margin;
-      padding: 40px $margin !important;
+      padding: 0 !important;
       padding-bottom: 0 !important;
     }
   }

@@ -79,8 +79,7 @@
       margin-right: .8em;
     }
     img {
-      margin-top: -1px;
-      margin-right: .6em;
+      margin-right: .4em;
       width: 16px;
       height: 16px;
       border-radius: 100px;
@@ -93,7 +92,8 @@
   &__title {
     @extend %postArchiveRight;
     font-size: rem-calc(14);
-    letter-spacing: .08em;
+    letter-spacing: .02em;
+    line-height: 1.5;
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -177,7 +177,8 @@
     img {
       max-width: 20px;
       vertical-align: middle;
-      margin-right: 10px;
+      margin-top: -2px;
+      margin-right: 6px;
       border-radius: 50%;
     }
     span {
@@ -239,8 +240,8 @@
       font-weight: bold;
     }
     &__content {
-      padding-top: 40px;
-      padding-bottom: 80px;
+      padding: 20px;
+      padding-bottom: 40px;
     }
   }
 }
@@ -248,17 +249,19 @@
 /* stylePost
 ---------------------------------------- */
 .stylePost {
+  padding: 20px;
+  padding-bottom: 40px;
   h1 {
     font-size: rem-calc(28);
-    margin: 20px;
+    margin-bottom: 20px;
   }
   h2 {
     position: relative;
     font-size: rem-calc(28);
     letter-spacing: -0.4px;
     line-height: 1.4;
-    margin: 20px 20px 40px 0;
-    padding: 14px 0 14px 18px;
+    margin: 20px -10px 40px -20px;
+    padding: 14px 0 14px 15px;
     border-left: 4px solid $colorBlue;
     border-bottom: 4px solid #999999;
     &:before {
@@ -277,46 +280,49 @@
     }
   }
   h3 {
-    margin: 30px 20px;
+    margin: 30px 0;
     margin-top: 30px;
     font-size: rem-calc(24);
     font-weight: bold;
     line-height: 1.4;
   }
   h4 {
-    margin: 20px;
+    margin: 20px 0;
     font-size: rem-calc(20);
     line-height: 1.4;
   }
   h5 {
-    margin: 20px;
+    margin: 20px 0;
     font-size: rem-calc(16);
     line-height: 1.4;
   }
   h6 {
-    margin: 20px;
+    margin: 20px 0;
     font-size: rem-calc(16);
     line-height: 1.4;
   }
   p {
     font-size: rem-calc(16);
     line-height: 2.0;
-    margin: 0 20px;
+    margin: 0;
     margin-bottom: 40px;
   }
-  a {}
+  a {
+    word-break: break-all;
+  }
   ul, ol {
-    margin: 20px;
-    margin-left: 40px;
+    margin-bottom: 20px;
+    margin-left: 20px;
     li {
+      margin-bottom: 10px;
       ul {
-        margin: 10px;
+        margin: 10px 0;
         margin-left: 20px;
       }
     }
   }
   dl {
-    margin: 20px;
+    margin: 20px 0;
     dt {
       display: inline-block;
       margin-bottom: 10px;
@@ -333,46 +339,28 @@
   }
   blockquote {
     position: relative;
-    margin: 20px;
+    margin-bottom: 20px;
     padding: 14px;
     padding-left: 50px;
-    border: 1px dotted $colorText;
+    border: 1px solid lighten($colorText, 60%);
     &:before {
       @include sprite-ir($icon-quatation, 0.5);
       position: absolute;
-      top: 10px;
-      left: 10px;
+      top: 12px;
+      left: 12px;
       content: '';
-      margin-right: 6px;
+    }
+    > * {
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
   cite {
     margin-top: 10px;
   }
-  // table {
-  //   margin: 20px auto;
-  //   display: block;
-  //   width: 90%;
-  //   thead {
-  //     display: none;
-  //   }
-  //   tbody {
-  //     display: block;
-  //     tr {
-  //       display: block;
-  //       th, td {
-  //         display: list-item;
-  //         list-style-type: none;
-  //       }
-  //     }
-  //   }
-  //   th {
-  //     border-bottom: 1px solid $colorBg;
-  //   }
-  //   td {}
-  // }
   pre {
-    margin: 0;
+    margin: 0 -20px;
     margin-bottom: 20px;
     padding: 20px;
     background-color: $colorText;
@@ -380,7 +368,7 @@
     font-family: $fontCode;
     font-size: rem-calc(12);
     overflow-x: auto;
-    > code {
+    code {
       background: transparent;
       border: none;
       color: #ffffff;
@@ -404,46 +392,48 @@
     box-shadow: 0px 2px 0 darken($colorText, 6%);
   }
   hr {
-    margin: 20px;
+    margin-bottom: 20px;
   }
 }
 
 /* media */
 @media #{$medium-up} {
   .stylePost {
+    padding: 80px;
+    padding-bottom: 40px;
     h1 {
-      margin: 40px $margin;
+      margin: 40px 0;
     }
     h2 {
-      margin: 40px 80px 40px 60px;
-      padding: 14px 0 14px 18px;
+      margin: 40px -10px 40px -20px;
+      padding: 14px 0px 14px 18px;
       font-size: rem-calc(32)
     }
     h3 {
-      margin: 0 80px 40px 80px;
+      margin: 40px 0;
       font-size: rem-calc(28);
       font-weight: bold;
     }
     h4 {
-      margin: 30px $margin;
+      margin: 30px 0;
       font-size: rem-calc(24);
     }
     h5 {
-      margin: 30px $margin;
+      margin: 30px 0;
       font-size: rem-calc(20);
     }
     h6 {
-      margin: 30px $margin;
+      margin: 30px 0;
       font-size: rem-calc(16);
     }
     p {
       font-size: rem-calc(16);
       line-height: 2.0;
-      margin: 0 80px;
+      margin: 0;
       margin-bottom: 40px;
     }
     pre {
-      margin: 0 80px 40px;
+      margin: 40px 0;
       padding: 20px;
       background-color: $colorText;
       font-size: rem-calc(14);
@@ -455,7 +445,7 @@
       }
     }
     ul, ol {
-      margin: 20px $margin 20px 100px;
+      margin: 0 0 40px 20px;
       li {
         ul,ol {
           margin: 10px;
@@ -464,24 +454,36 @@
       }
     }
     dl {
-      margin: 40px $margin;
+      margin: 40px 0;
     }
     blockquote {
-      margin: 20px $margin 40px;
+      margin: 20px 0 40px;
       padding: 20px;
-      padding-left: 50px;
+      padding-left: 54px;
       &:before {
         top: 18px;
         left: 14px;
       }
+      > * {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    figure {
+      margin-left: 0;
+      margin-bottom: 40px;
+      figcaption {
+        margin-top: 10px;
+      }
     }
     table {
-      margin: 20px $margin;
+      margin: 20px 0;
       display: block;
       width: auto;
     }
     hr {
-      margin: 40px $margin;
+      margin: 40px 0;
     }
   }
 }
