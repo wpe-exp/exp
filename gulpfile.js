@@ -18,8 +18,8 @@ var gulp          = require('gulp'),
 // @param false or virtual host name of local machine such as . Set false to browser-sync start as server mode.
 // @param false or Subdomains which must be between 4 and 20 alphanumeric characters.
 var bsOpt = {
-  'proxy'        : 'exp.dev',
-  // 'proxy'        : false,
+  //'proxy'        : 'exp.dev',
+   'proxy'        : false,
   // 'tunnel'       : 'randomstring23232',
   'tunnel'       : false,
   'browser'      : 'google chrome'
@@ -37,7 +37,7 @@ var paths = {
   'destImg'      : 'assets/images/',
   'destCss'      : 'assets/css/',
   'destJs'       : 'assets/js/',
-  'htmlDir'      : 'src/html/',
+  'htmlDir'      : 'src/html',
   'phpFiles'     : ['*.php', './**/*.php']
 };
 

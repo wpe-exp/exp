@@ -1,0 +1,35 @@
+include inc/core/_config
+extends inc/core/_base
+block title
+  - var title = ''
+  title= title
+block prepend meta
+  - var sitename = name
+  - var keywords = page.top.keywords
+  - var description = page.top.description
+  - var ogpimage = page.top.ogpimage
+  - var bodyClass = 'home'
+block append meta
+block body
+  div.off-canvas-wrap(data-offcanvas)
+    div.l-container.inner-wrap
+      include inc/layout/_l-header
+      //- include inc/layout/_l-header-sp
+
+      section.pageFront
+        header.l-row
+          h2.pageTitle  Member
+        div.l-row
+          #main.l-main
+            .memberList
+              ul.memberList__list
+                - for (var i = 0; i < 10; i++)
+                  li
+                    .authorThumb: img(src="/assets/images/thumb_author.png" alt="John Smith")
+                    .authorName John Smith
+
+
+
+
+    include inc/layout/_l-footer
+block append scriptFooter
