@@ -1,4 +1,73 @@
 @charset "utf-8";
 
+.styleMember {
+  @include grid-row();
+  padding: $margin;
+  &__list {
+    list-style: none;
+    a {
+      display: block;
+      color: $colorText;
+      .styleMember__list__thumb {
+        border-radius: 50%;
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        z-index: 20;
+        &:before {
+          background-color: rgba(0, 0, 0, 0);
+          content: '';
+          display: block;
+          transition: all .3s linear;
+        }
+        img {
+          position: relative;
+          transition: all .3s linear;
+          z-index: 10;
+        }
+      }
+      &:hover {
+        .styleMember__list__thumb {
+          &:before {
+            background-color: rgba(0, 0, 0, .4);
+            height: 100px;
+            width: 100%;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 30;
+          }
+          img {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+    li {
+      text-align: center;
+    }
+  }
+  @media #{$medium-up} {
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        width: 20%;
+        margin-bottom: 60px;
+      }
+      &__thumb {}
+      &__name {
+        line-height: 1;
+        margin-top: 10px;
+        font-size: 16px;
+      }
+    }
+  }
+  @media #{$large-up} {}
+}
+
 
 
