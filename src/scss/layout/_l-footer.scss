@@ -14,6 +14,16 @@
     @include grid-row;
     padding: 30px 0;
   }
+  .fb_iframe_widget,
+  .fb_iframe_widget span,
+  .fb_iframe_widget span iframe[style] {
+    width: 100% !important;
+    display: block;
+  }
+  .fb_iframe_widget_lift {
+    position: relative;
+    z-index: 100;
+  }
 }
 
 .footer-bot {
@@ -39,11 +49,5 @@
   }
 }
 
-#fb-root {
-  display: none;
-}
 
-.fb_iframe_widget, .fb_iframe_widget span,
-.fb_iframe_widget span iframe[style] {
-  width: 100% !important;
-}
+
