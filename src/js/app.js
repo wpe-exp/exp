@@ -1,5 +1,6 @@
-// var $ = require('jquery');
 var foundation = require('foundation');
+var facebook = require('./app/fb.js');
+facebook(document, 'script', 'facebook-jssdk');
 
 (function($){
   $(document).ready(function(){
@@ -14,6 +15,8 @@ var foundation = require('foundation');
         hljs.highlightBlock(block);
       });
     }
+
+
 
   });
 })(jQuery);

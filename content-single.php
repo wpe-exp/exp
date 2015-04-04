@@ -24,7 +24,9 @@
 		</div>
 		<h1 class="post__title"><?php the_title(); ?></h1>
 		<div class="snsShare">
-		<?php if(function_exists("wp_social_bookmarking_light_output_e")) wp_social_bookmarking_light_output_e(null, get_permalink(), the_title("", "", false)); ?>
+			<?php if(function_exists("wp_social_bookmarking_light_output_e")) {
+				wp_social_bookmarking_light_output_e(null, get_permalink(), the_title("", "", false));
+			} ?>
 		</div>
 	</header>
 
@@ -34,7 +36,9 @@
 	<aside class="widget">
 		<div class="snsShare">
 			<h2 class="snsShare__title">記事をシェアする</h2>
-			<?php if(function_exists("wp_social_bookmarking_light_output_e")) wp_social_bookmarking_light_output_e(null, get_permalink(), the_title("", "", false)); ?>
+			<?php if(function_exists("wp_social_bookmarking_light_output_e")) {
+				wp_social_bookmarking_light_output_e(null, get_permalink(), the_title("", "", false));
+			} ?>
 		</div>
 	</aside>
 
