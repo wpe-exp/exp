@@ -264,6 +264,7 @@
     padding: 14px 0 14px 15px;
     border-left: 4px solid $colorBlue;
     border-bottom: 4px solid #999999;
+    font-weight: bold;
     &:before {
       position: absolute;
       bottom: -14px;
@@ -285,10 +286,12 @@
     font-size: rem-calc(24);
     font-weight: bold;
     line-height: 1.4;
+    border-bottom: 4px solid $colorBg;
   }
   h4 {
     margin: 20px 0;
     font-size: rem-calc(20);
+    font-weight: bold;
     line-height: 1.4;
   }
   h5 {
@@ -303,7 +306,7 @@
   }
   p {
     font-size: rem-calc(16);
-    line-height: 2.0;
+    line-height: 1.8;
     margin: 0;
     margin-bottom: 40px;
   }
@@ -332,7 +335,7 @@
     }
     dd {
       margin-left: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       letter-spacing: -0.4px;
       line-height: 1.8;
     }
@@ -379,8 +382,9 @@
   code {
     color: $colorText;
     font-family: $fontCode;
+    font-size: rem-calc(14);
     background-color: $colorBg;
-    border-radius: 2px;
+    border-radius: 4px;
   }
   kbd {
     padding: 2px 4px;
@@ -407,12 +411,11 @@
     h2 {
       margin: 40px -10px 40px -20px;
       padding: 14px 0px 14px 18px;
-      font-size: rem-calc(32)
+      font-size: rem-calc(32);
     }
     h3 {
       margin: 40px 0;
       font-size: rem-calc(28);
-      font-weight: bold;
     }
     h4 {
       margin: 30px 0;
@@ -428,7 +431,6 @@
     }
     p {
       font-size: rem-calc(16);
-      line-height: 2.0;
       margin: 0;
       margin-bottom: 40px;
     }
@@ -436,13 +438,15 @@
       margin: 40px 0;
       padding: 20px;
       background-color: $colorText;
-      font-size: rem-calc(14);
+      font-size: rem-calc(12);
+      letter-spacing: 0.4px;
+      line-height: 1.5;
       > code {
-        font-size: rem-calc(14);
+        font-size: rem-calc(12);
       }
-      code {
-        font-size: rem-calc(14);
-      }
+    }
+    code {
+      font-size: rem-calc(14);
     }
     ul, ol {
       margin: 0 0 40px 20px;
