@@ -3,25 +3,27 @@
  * 1. DEPENDENCIES
 ------------------------------------------------------------------------------*/
 var gulp          = require('gulp'),
-  $               = require('gulp-load-plugins')({ pattern: ['gulp-*', 'gulp.*'], replaceString: /\bgulp[\-.]/ }),
+  $               = require('gulp-load-plugins')({ pattern: ['gulp-*', 'gulp.*'] }),
   browserify      = require('browserify'),
   browserSync     = require('browser-sync'),
   buffer          = require('vinyl-buffer'),
-  del             = require('del'),
   runSequence     = require('run-sequence'),
-  source          = require('vinyl-source-stream')
+  source          = require('vinyl-source-stream'),
+  argv            = require('yargs').argv
 ;
 
 /*------------------------------------------------------------------------------
  * 2. FILE DESTINATIONS (RELATIVE TO ASSSETS FOLDER)
 ------------------------------------------------------------------------------*/
+// @param Choose css framework between foundatino and bootstrap
 // @param false or virtual host name of local machine such as . Set false to browser-sync start as server mode.
 // @param false or Subdomains which must be between 4 and 20 alphanumeric characters.
-var bsOpt = {
+var opt = {
+  'cssBase'      : 'foundation',
+  '_s'           : true,
   'proxy'        : 'exp.dev',
-  // 'tunnel'       : 'randomstring23232',
   'tunnel'       : false,
-  'browser'      : 'google chrome'
+  'browser'      : 'google chrome canary'
 };
 // basic locations
 var paths = {
@@ -37,38 +39,51 @@ var paths = {
   'destCss'      : 'assets/css/',
   'destJs'       : 'assets/js/',
   'htmlDir'      : 'src/html',
-  'phpFiles'     : ['*.php', './**/*.php']
+  'phpFiles'     : ['*.php', '**/*.php']
+};
+
+var rubySassConf = {
+  loadPath       : [],
+  require        : 'sass-globbing',
+  sourcemap      : true
 };
 
 /*------------------------------------------------------------------------------
  * 3. initializing bower_components
 ------------------------------------------------------------------------------*/
-gulp.task('clean:bower', function(cb) {
-  del('./bower_components', cb);
-});
-
 gulp.task('bower:install', $.shell.task(['bower install']));
 
-gulp.task('install:foundation', $.shell.task(['bash src/shell/foundation.sh']));
+gulp.task('install:cssBase', function() {
+  if(opt.cssBase) {
+    return gulp.src('src/shell/', {read: false})
+      .pipe($.shell(['bash src/shell/' + opt.cssBase + '.sh']))
+  }
+});
 
-gulp.task('install:_s', $.shell.task(['bash src/shell/_s.sh']));
+gulp.task('install:_s', function() {
+  if (opt._s === true) {
+    return gulp.src('src/shell/_s.sh', {read: false})
+      .pipe($.shell(['echo start copy _s', 'bash src/shell/_s.sh']));
+  } else {
+    return gulp.src('src/shell/_s.sh', {read: false})
+      .pipe($.shell(['echo skipping to install _s']));
+  }
+});
 
 /*------------------------------------------------------------------------------
  * 4. browser-sync
 ------------------------------------------------------------------------------*/
 gulp.task('browser-sync', function() {
   var args = {};
-  if (bsOpt.proxy == false) {
+  if (argv.mode == 'server' ) {
     args.server = { baseDir: paths.root };
     args.startPath = paths.htmlDir;
   } else {
-    args.proxy = bsOpt.proxy;
+    args.proxy = opt.proxy;
     args.open = 'external';
   }
-  if (bsOpt.tunnel != false) {
-    args.tunnel = bsOpt.tunnel;
-  }
-  args.browser = bsOpt.browser;
+  if (opt.tunnel != false) args.tunnel = opt.tunnel;
+  args.browser = opt.browser;
   browserSync(args);
 });
 
@@ -84,7 +99,7 @@ gulp.task('jade', function() {
     .pipe($.data(function(file) { return require('./src/json/setting.json'); }))
     .pipe($.plumber())
     .pipe($.jade({ pretty: true }))
-    .pipe(gulp.dest('src/html'))
+    .pipe(gulp.dest(paths.htmlDir))
     .pipe(browserSync.reload({ stream: true }));
 });
 
@@ -110,11 +125,17 @@ gulp.task('js:hint', function() {
 /*------------------------------------------------------------------------------
  * 7. sass Tasks
 ------------------------------------------------------------------------------*/
+switch(opt.cssBase) {
+  case 'foundation':
+    rubySassConf.loadPath.push('bower_components/foundation/scss');
+    break;
+  case 'bootstrap':
+    rubySassConf.loadPath.push('bower_components/bootstrap-sass-official/assets/stylesheets');
+    break;
+}
+
 gulp.task('scss', function() {
-    return $.rubySass(paths.srcScss, {
-      require: 'sass-globbing',
-      sourcemap: true
-    })
+    return $.rubySass(paths.srcScss, rubySassConf)
     .on('error', function(err) { console.error('Error!', err.message); })
     .pipe($.autoprefixer({
       browsers: ['> 1%', 'last 2 versions', 'ie 10', 'ie 9'],
@@ -142,7 +163,7 @@ gulp.task('sprite', function() {
   .pipe($.spritesmith({
     imgName: 'sprite.png',
     imgPath: '../images/sprite.png',
-    cssName: '_ma-sprite.scss'
+    cssName: '__sprite.scss'
   }));
   spriteData.img
     .pipe($.imagemin({ optimizationLevel: 3 }))
@@ -154,20 +175,19 @@ gulp.task('sprite', function() {
  * 9. gulp Tasks
 ------------------------------------------------------------------------------*/
 gulp.task('watch', function() {
-  gulp.watch([paths.srcJade   + '**/*.jade'],    ['jade']);
-  gulp.watch([paths.srcJs     + '**/*.js'],      ['js', 'js:hint']);
-  gulp.watch([paths.srcScss   + '**/*.scss'],    ['scss']);
-  gulp.watch([paths.srcImg    + 'sprite/*.png'], ['sprite']);
+  gulp.watch([paths.srcJade + '**/*.jade'],    ['jade']);
+  gulp.watch([paths.srcJs   + '**/*.js'],      ['js', 'js:hint']);
+  gulp.watch([paths.srcScss + '**/*.scss'],    ['scss']);
+  gulp.watch([paths.srcImg  + 'sprite/*.png'], ['sprite']);
   gulp.watch([paths.phpFiles],                   ['bs-reload']);
 });
 
 gulp.task('default', [
   'browser-sync',
-  'jade',
   'sprite',
   'watch'
 ]);
 
 gulp.task('init', function(cb) {
-  runSequence('bower:install', ['install:foundation'], 'install:_s', cb);
+  runSequence('bower:install', ['install:cssBase'], 'install:_s', cb);
 });
