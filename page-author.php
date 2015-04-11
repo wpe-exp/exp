@@ -1,9 +1,4 @@
-<?php
-/*
-Template Name: members
-*/
-
-get_header(); ?>
+<?php get_header(); ?>
 
 	<div class="l-row">
 		<div id="main" class="l-main">
