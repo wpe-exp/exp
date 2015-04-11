@@ -18,9 +18,27 @@
 					<div class="footer-bot__inner">
 						<div class="footer-bot__logo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/page/common/logo_exp.svg" alt="exp"></div>
 						<ul class="footer-bot__list">
-							<li class="footer-bot__item"><a href="https://twitter.com/WPE34" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/page/common/icon_tw.svg" alt="exp twitter"></a></li>
-							<li class="footer-bot__item"><a href="https://www.facebook.com/wpe.org" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/page/common/icon_fb.svg" alt="exp facebook"></a></li>
-							<li class="footer-bot__item"><a href="https://github.com/wpe-exp/exp" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/page/common/icon_gh.svg" alt="exp github"></a></li>
+							<li class="footer-bot__item">
+								<a href="https://twitter.com/WPE34" target="_blank">
+									<svg viewBox="0 0 49 49" width="49px" height="49px" role="img" area-labelledby="title desc">
+									<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite-global.symbol.svg#icon_tw">
+								</svg>
+								</a>
+							</li>
+							<li class="footer-bot__item">
+								<a href="https://www.facebook.com/wpe.org" target="_blank">
+									<svg viewbox="0 0 49 49" width="49px" height="49px" role="img" area-labelledby="title desc">
+									<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite-global.symbol.svg#icon_fb">
+								</svg>
+								</a>
+							</li>
+							<li class="footer-bot__item">
+								<a href="https://github.com/wpe-exp/exp" target="_blank">
+									<svg viewbox="0 0 49 49" width="49px" height="49px" role="img" area-labelledby="title desc">
+									<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite-global.symbol.svg#icon_gh">
+								</svg>
+								</a>
+							</li>
 						</ul>
 					</div>
 				</div>
