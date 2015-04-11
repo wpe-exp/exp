@@ -7,6 +7,9 @@ var gulp          = require('gulp'),
   browserify      = require('browserify'),
   browserSync     = require('browser-sync'),
   buffer          = require('vinyl-buffer'),
+  fs              = require('fs'),
+  merge           = require('merge-stream'),
+  path            = require('path'),
   runSequence     = require('run-sequence'),
   source          = require('vinyl-source-stream'),
   argv            = require('yargs').argv
@@ -47,6 +50,12 @@ var rubySassConf = {
   require        : 'sass-globbing',
   sourcemap      : true
 };
+
+function getFolders(dir) {
+  return fs.readdirSync(dir).filter(function(file) {
+    return fs.statSync(path.join(dir, file)).isDirectory();
+  });
+}
 
 /*------------------------------------------------------------------------------
  * 3. initializing bower_components
@@ -171,15 +180,35 @@ gulp.task('sprite', function() {
   spriteData.css.pipe(gulp.dest(paths.srcScss + 'module'));
 });
 
+gulp.task('sprite:inline-svg', function() {
+  var folders = getFolders(paths.srcImg + 'sprite-svg');
+  var tasks = folders.map(function(folder) {
+    return gulp.src(path.join(paths.srcImg + 'sprite-svg', folder, '/*.svg'))
+      .pipe($.svgSprite({
+        dest: './',
+        mode: { symbol: { dest: './' } }
+      }))
+      .pipe($.rename({
+        basename: 'symbol',
+        dirname: './',
+        prefix: 'sprite-' + folder + '.'
+      }))
+      .pipe(gulp.dest(paths.destImg));
+  });
+  return merge(tasks);
+});
+
+
 /*------------------------------------------------------------------------------
  * 9. gulp Tasks
 ------------------------------------------------------------------------------*/
 gulp.task('watch', function() {
-  gulp.watch([paths.srcJade + '**/*.jade'],    ['jade']);
-  gulp.watch([paths.srcJs   + '**/*.js'],      ['js', 'js:hint']);
-  gulp.watch([paths.srcScss + '**/*.scss'],    ['scss']);
-  gulp.watch([paths.srcImg  + 'sprite/*.png'], ['sprite']);
-  gulp.watch([paths.phpFiles],                   ['bs-reload']);
+  gulp.watch([paths.srcJade + '**/*.jade'],           ['jade']);
+  gulp.watch([paths.srcJs   + '**/*.js'],             ['js', 'js:hint']);
+  gulp.watch([paths.srcScss + '**/*.scss'],           ['scss']);
+  gulp.watch([paths.srcImg  + 'sprite/*.png'],        ['sprite']);
+  gulp.watch([paths.srcImg  + 'sprite-svg/**/*.svg'], ['sprite:inline-svg']);
+  gulp.watch([paths.phpFiles],                        ['bs-reload']);
 });
 
 gulp.task('default', [
