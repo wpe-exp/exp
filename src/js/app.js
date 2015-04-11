@@ -1,6 +1,16 @@
 var foundation = require('foundation');
+
 var facebook = require('./app/fb.js');
 facebook(document, 'script', 'facebook-jssdk');
+
+var pocket = require('./app/pocket.js');
+pocket(document, 'pocket-btn-js');
+
+var hatebu = require('./app/hatebu.js');
+hatebu(document, 'hatebu-count');
+
+var twitter = require('./app/tw.js');
+twitter(document, 'tweet-count');
 
 (function($){
   $(document).ready(function(){
@@ -15,8 +25,6 @@ facebook(document, 'script', 'facebook-jssdk');
         hljs.highlightBlock(block);
       });
     }
-
-
 
   });
 })(jQuery);
