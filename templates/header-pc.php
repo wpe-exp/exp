@@ -1,6 +1,10 @@
 <header class="l-header">
 	<div class="l-header__inner">
-		<h1 class="siteLogo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/common/icon_exp.svg" alt="<?php bloginfo( 'name' ); ?>"></a></h1>
+		<h1 class="siteLogo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<svg viewBox="0 0 68 68" role="img" area-labelledby="title desc">
+				<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite-global.symbol.svg#icon_exp"></use>
+			</svg>
+		</a></h1>
 		<nav class="globalNav">
 			<ul class="globalNav__list">
 				<li class="globalNav__item globalNav__item--about"><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">About</a></li>

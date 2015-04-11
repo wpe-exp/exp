@@ -1,7 +1,13 @@
 <header class="l-header">
 	<div data-topbar="" class="tab-bar">
 		<div class="left-small left-small"><a href="#" aria-expanded="true" class="left-off-canvas-toggle menu-icon menu-icon--globalSp"><span></span></a></div>
-		<h1 class="siteLogoSP"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/common/icon_exp.svg" alt="<?php bloginfo( 'name' ); ?>"></a></h1>
+		<h1 class="siteLogoSP">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<svg viewBox="0 0 68 68" width="30px" height="30px" role="img" area-labelledby="title desc">
+					<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite-global.symbol.svg#icon_exp"></use>
+				</svg>
+			</a>
+		</h1>
 	</div>
 	<nav class="globalNavSp left-off-canvas-menu">
 		<ul class="globalNavSp__list off-canvas-list">
