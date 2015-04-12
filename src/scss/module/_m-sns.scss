@@ -4,6 +4,7 @@
 .snsShare {
   background-color: #ffffff;
   margin: 20px;
+  margin-top: 10px;
   &__title {
     font-size: rem-calc(18);
     font-weight: bold;
@@ -15,7 +16,6 @@
   &__item {
     @extend %group;
     flex: 1;
-    padding: 6px;
     height: 50px;
     list-style-type: none;
     &:first-child {
@@ -44,10 +44,13 @@
       background-color: $colorHatena;
     }
   }
-  &__counter {
+  &__count {
+    position: relative;
     display: block;
     box-sizing: border-box;
-    padding: 4px 0;
+    margin: 6px 6px 8px 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     text-align: center;
     background-color: #ffffff;
     color: #555555;
@@ -55,9 +58,20 @@
     font-weight: bold;
     border-radius: 2px;
     line-height: 1.0;
+    &:after {
+      @include triangle(down, 8px, 8px, #ffffff);
+      content: "";
+      position: absolute;
+      top: 13px;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
   }
   &__icon {
     display: block;
+    box-sizing: border-box;
+    text-align: center;
     color: #ffffff;
   }
 }
@@ -76,30 +90,41 @@
     &__item {
       border-radius: 4px;
       margin-right: 10px;
+      transition: .3s;
       &:last-child {
         margin-right: 0;
       }
-      > a {
-        text-align: left;
-      }
       &--tw {
         box-shadow: 0 2px 0 darken($colorTw, 20%);
+        &:hover {
+          background-color: darken($colorTw, 10%);
+        }
       }
       &--fb {
         box-shadow: 0 2px 0 darken($colorFb, 20%);
+        &:hover {
+          background-color: darken($colorFb, 10%);
+        }
       }
       &--po {
         box-shadow: 0 2px 0 darken($colorPocket, 20%);
+        &:hover {
+          background-color: darken($colorPocket, 10%);
+        }
       }
       &--ha {
         box-shadow: 0 2px 0 darken($colorHatena, 20%);
+        &:hover {
+          background-color: darken($colorHatena, 10%);
+        }
       }
     }
-    &__icon {
-      margin: 0 4px;
-    }
-    &__counter {
-      padding: auto;
+    &__count {
+      text-align: center;
+      font-size: rem-calc(12);
+      &:after {
+        top: 15px;
+      }
     }
   }
 }

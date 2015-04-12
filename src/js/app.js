@@ -1,16 +1,5 @@
 var foundation = require('foundation');
-
-var facebook = require('./app/fb.js');
-facebook(document, 'script', 'facebook-jssdk');
-
-var pocket = require('./app/pocket.js');
-pocket(document, 'pocket-btn-js');
-
-var hatebu = require('./app/hatebu.js');
-hatebu(document, 'hatebu-count');
-
-var twitter = require('./app/tw.js');
-twitter(document, 'tweet-count');
+var sns = require('./app/sns.js');
 
 (function($){
   $(document).ready(function(){
@@ -24,6 +13,10 @@ twitter(document, 'tweet-count');
       $('#stylePost').find('pre code').each(function(i, block) {
         hljs.highlightBlock(block);
       });
+    }
+
+    if(typeof sns !== 'undefined') {
+      sns.init();
     }
 
   });
