@@ -64,7 +64,7 @@
 		<?php the_content(); ?>
 	</div>
 	<aside class="widget">
-		<div class="snsShare">
+		<div class="snsShare snsShare--widget">
 			<h2 class="snsShare__title">記事をシェアする</h2>
 			<ul class="snsShare__list">
 				<li class="snsShare__item snsShare__item--fb">
@@ -92,7 +92,11 @@
 					</a>
 				</li>
 				<li class="snsShare__item snsShare__item--po">
-					<a href="https://getpocket.com/save" data-lang="ja" data-pocket-count="horizontal" data-pocket-label="pocket" class="pocket-btn"></a>
+					<?php if ( wp_is_mobile() ): ?>
+						<a href="https://getpocket.com/save" data-lang="ja" data-pocket-count="none" data-pocket-label="pocket" class="pocket-btn"></a>
+					<?php else: ?>
+						<a href="https://getpocket.com/save" data-lang="ja" data-pocket-count="horizontal" data-pocket-label="pocket" class="pocket-btn"></a>
+					<?php endif; ?>
 				</li>
 			</ul>
 		</div>

@@ -3,8 +3,7 @@
 ---------------------------------------- */
 .snsShare {
   background-color: #ffffff;
-  margin: 20px;
-  margin-top: 10px;
+  padding: 20px;
   &__title {
     font-size: rem-calc(18);
     font-weight: bold;
@@ -16,7 +15,6 @@
   &__item {
     @extend %group;
     flex: 1;
-    height: 50px;
     list-style-type: none;
     &:first-child {
       border-top-left-radius: 4px;
@@ -36,7 +34,7 @@
       background-color: $colorPocket;
       > .pocket-btn {
         height: 20px;
-        margin: 18px 0;
+        margin: 18px auto;
         text-align: center;
       }
     }
@@ -78,14 +76,13 @@
 
 @media #{$medium-up}{
   .snsShare {
-    margin: 0 80px;
-    margin-bottom: 40px;
+    padding: 40px 80px;
     &__title {
+      margin-top: 0;
       font-size: rem-calc(20);
     }
     &__list {
       margin: 0;
-      height: 35px;
     }
     &__item {
       border-radius: 4px;
@@ -94,26 +91,28 @@
       &:last-child {
         margin-right: 0;
       }
+      &:hover {
+      }
       &--tw {
-        box-shadow: 0 2px 0 darken($colorTw, 20%);
+        box-shadow: 0 3px 0 darken($colorTw, 20%);
         &:hover {
           background-color: darken($colorTw, 10%);
         }
       }
       &--fb {
-        box-shadow: 0 2px 0 darken($colorFb, 20%);
+        box-shadow: 0 3px 0 darken($colorFb, 20%);
         &:hover {
           background-color: darken($colorFb, 10%);
         }
       }
       &--po {
-        box-shadow: 0 2px 0 darken($colorPocket, 20%);
+        box-shadow: 0 3px 0 darken($colorPocket, 20%);
         &:hover {
           background-color: darken($colorPocket, 10%);
         }
       }
       &--ha {
-        box-shadow: 0 2px 0 darken($colorHatena, 20%);
+        box-shadow: 0 3px 0 darken($colorHatena, 20%);
         &:hover {
           background-color: darken($colorHatena, 10%);
         }
@@ -126,5 +125,6 @@
         top: 15px;
       }
     }
+    &__icon {}
   }
 }
