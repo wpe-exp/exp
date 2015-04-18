@@ -26,23 +26,27 @@
 		<div class="snsShare">
 			<ul class="snsShare__list">
 				<li class="snsShare__item snsShare__item--fb">
-					<a href="" id="fb-count" class="snsShare__count snsShare__count--fb"></a>
-					<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>" class="snsShare__icon snsShare__icon--fb">
-						<svg viewBox="0 0 9 18" role="img" area-labelledby="title desc" width="7px" height="16px">
-							<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite-global.symbol.svg#icon_shareFb"></use>
-						</svg>
+					<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>" class="snsShare__btnFb">
+						<span class="snsShare__count snsShare__count--fb"></span>
+						<div class="snsShare__icon snsShre__icon--fb">
+							<svg viewBox="0 0 9 18" role="img" area-labelledby="title desc" width="7px" height="16px">
+								<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite-global.symbol.svg#icon_shareFb"></use>
+							</svg>
+						</div>
 					</a>
 				</li>
 				<li class="snsShare__item snsShare__item--ha">
-					<a href="" id="hatebu-count" class="snsShare__count snsShare__count--ha"></a>
-					<a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=<?php echo urlencode(get_permalink()); ?>&amp;title=<?php echo urlencode(get_the_title()); ?>" class="snsShare__icon snsShare__icon--ha">
-						<svg viewBox="0 0 19 17" role="img" area-labelledby="title desc" width="14px" height="12px">
-							<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite-global.symbol.svg#icon_shareHa"></use>
-						</svg>
+					<a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=<?php echo urlencode(get_permalink()); ?>&amp;title=<?php echo urlencode(get_the_title()); ?>" class="snsShare__btnHa">
+						<span class="snsShare__count snsShare__count--ha"></span>
+						<div class="snsShare__icon snsShare__icon--ha">
+							<svg viewBox="0 0 19 17" role="img" area-labelledby="title desc" width="14px" height="12px">
+								<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite-global.symbol.svg#icon_shareHa"></use>
+							</svg>
+						</div>
 					</a>
 				</li>
 				<li class="snsShare__item snsShare__item--tw">
-					<a href="" id="tweet-count" class="snsShare__count snsShare__count--tw"></a>
+					<a href="https://twitter.com/search?q=<?php echo urlencode(get_permalink()); ?>" class="snsShare__count snsShare__count--tw" target="_blank"></a>
 					<a href="https://twitter.com/share?&amp;text=<?php echo urlencode(get_the_title()); ?>&amp;via=WPE34" class="snsShare__icon snsShare__icon--tw">
 						<svg viewBox="0 0 20 17" role="img" area-labelledby="title desc" width="17px" height="13px">
 							<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite-global.symbol.svg#icon_shareTw"></use>
@@ -68,23 +72,27 @@
 			<h2 class="snsShare__title">記事をシェアする</h2>
 			<ul class="snsShare__list">
 				<li class="snsShare__item snsShare__item--fb">
-					<a href="" class="snsShare__count snsShare__count--fb"></a>
-					<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>" class="snsShare__icon snsShare__icon--fb">
-						<svg viewBox="0 0 9 18" role="img" area-labelledby="title desc" width="7px" height="16px">
-							<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite-global.symbol.svg#icon_shareFb"></use>
-						</svg>
+					<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>" class="snsShare__btnFb">
+						<span class="snsShare__count snsShare__count--fb"></span>
+						<div class="snsShare__icon snsShre__icon--fb">
+							<svg viewBox="0 0 9 18" role="img" area-labelledby="title desc" width="7px" height="16px">
+								<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite-global.symbol.svg#icon_shareFb"></use>
+							</svg>
+						</div>
 					</a>
 				</li>
 				<li class="snsShare__item snsShare__item--ha">
-					<a href="" class="snsShare__count snsShare__count--ha"></a>
-					<a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=<?php echo urlencode(get_permalink()); ?>&amp;title=<?php echo urlencode(get_the_title()); ?>" class="snsShare__icon snsShare__icon--ha">
-						<svg viewBox="0 0 19 17" role="img" area-labelledby="title desc" width="14px" height="12px">
-							<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite-global.symbol.svg#icon_shareHa"></use>
-						</svg>
+					<a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=<?php echo urlencode(get_permalink()); ?>&amp;title=<?php echo urlencode(get_the_title()); ?>" class="snsShare__btnHa">
+						<span class="snsShare__count snsShare__count--ha"></span>
+						<div class="snsShare__icon snsShare__icon--ha">
+							<svg viewBox="0 0 19 17" role="img" area-labelledby="title desc" width="14px" height="12px">
+								<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite-global.symbol.svg#icon_shareHa"></use>
+							</svg>
+						</div>
 					</a>
 				</li>
 				<li class="snsShare__item snsShare__item--tw">
-					<a href="" class="snsShare__count snsShare__count--tw"></a>
+					<a href="https://twitter.com/search?q=<?php echo urlencode(get_permalink()); ?>" class="snsShare__count snsShare__count--tw" target="_blank"></a>
 					<a href="https://twitter.com/share?&amp;text=<?php echo urlencode(get_the_title()); ?>&amp;via=WPE34" class="snsShare__icon snsShare__icon--tw">
 						<svg viewBox="0 0 20 17" role="img" area-labelledby="title desc" width="17px" height="13px">
 							<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite-global.symbol.svg#icon_shareTw"></use>

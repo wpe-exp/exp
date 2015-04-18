@@ -32,7 +32,7 @@ module.exports = {
     });
   },
   fbOpen: function() {
-    var $target = $('#main').find('.snsShare__icon--fb');
+    var $target = $('#main').find('.snsShare__btnFb');
     $target.on('click', function(event) {
       event.preventDefault();
       window.open($(this).attr('href'), 'facebook', 'width=670, height=400, menubar=no, toolbar=no, scrollbars=yes');
@@ -58,7 +58,7 @@ module.exports = {
     });
   },
   haOpen: function() {
-    var $target = $('#main').find('.snsShare__icon--ha');
+    var $target = $('#main').find('.snsShare__btnHa');
     $target.on('click', function(event) {
       event.preventDefault();
       window.open($(this).attr('href'), 'はてなブックマークブックマークレット', 'width=550, height=420, menubar=no, toolbar=no, scrollbars=yes');
