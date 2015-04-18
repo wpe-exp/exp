@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="10px" height="20px" viewBox="0 0 10 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_fb</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="single" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="single_pc" sketch:type="MSArtboardGroup" transform="translate(-466.000000, -681.000000)" fill="#FFFFFF">
+            <g id="entry-header" sketch:type="MSLayerGroup" transform="translate(170.000000, 430.000000)">
+                <g id="sns_flat" transform="translate(80.000000, 240.000000)" sketch:type="MSShapeGroup">
+                    <g id="btn_faccebook" transform="translate(195.000000, 0.000000)">
+                        <path d="M27.0514286,18.2342857 L27.0514286,15.9228571 C27.0514286,15.9385714 27.0514286,15.9057143 27.0514286,15.7671429 C27.0514286,14.8385714 27.2471429,14.2771429 28.4628571,14.2771429 C29.59,14.2771429 30.6228571,14.2842857 30.6228571,14.2842857 L30.7014286,11.13 C30.7014286,11.13 29.6914286,11 28.3242857,11 C24.9457143,11 23.4785714,13.0828571 23.4785714,15.3485714 L23.4785714,18.2342857 L21,18.2342857 L21,21.6128571 L23.4785714,21.6128571 L23.4785714,31 L27.0514286,31 L27.0514286,21.6128571 L30.5585714,21.6128571 L30.72,18.2342857 L27.0514286,18.2342857" id="icon_fb"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

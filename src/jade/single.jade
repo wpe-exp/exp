@@ -26,12 +26,7 @@ block body
                 span John Smith
                 a.post__label.catLabel.catLabel--wordpress Category
               h1.post__title WordPress はメンテナンスが大事！改ざんされたサイトを復旧させるまでの道のり
-              .snsShare
-                ul.snsShare__list
-                  li.snsShare__item: +link('', 'twitter')(class="btnTw")
-                  li.snsShare__item: +link('', 'facebook')(class="btnFb")
-                  li.snsShare__item: +link('', 'pocket')(class="btnPocket")
-                  li.snsShare__item: +link('', 'Hatena')(class="btnHatena")
+              include inc/module/_m-sns-pc
             div.post__content.stylePost
               h2 はじまりは Google の通告から
               h3 h3 title 見出し
@@ -56,7 +51,7 @@ block body
               p 要するに今日に忠告者は何しろこの詐欺たですだけになるがおきませには教育しなかっませから、ちょっとには知れですななたら。力に移れたものはもう今から別になたます。なお大森さんが蹂躙行儀あまり衰弱へしならがたこんな生徒それか観念とというご病気うだたたて、この結果は私か学芸性格へいうば、嘉納さんののを背後のあれによくご忠告とすれて私事がご反抗にあっようにけっしてご供をしうたが、ぼんやりまして永続に出来ないばならたいのでするなけれまし。
             div.post__content
               include inc/module/_m-author
-          include inc/module/_m-sns
+          include inc/module/_m-sns-sp
           include inc/module/_m-recommend
       include inc/layout/_l-footer
 block append scriptFooter

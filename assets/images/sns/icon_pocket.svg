@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_pocket</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="single" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="single_pc" sketch:type="MSArtboardGroup" transform="translate(-656.000000, -682.000000)" fill="#FFFFFF">
+            <g id="entry-header" sketch:type="MSLayerGroup" transform="translate(170.000000, 430.000000)">
+                <g id="sns_flat" transform="translate(80.000000, 240.000000)" sketch:type="MSShapeGroup">
+                    <g id="btn_pocket" transform="translate(390.000000, 0.000000)">
+                        <path d="M25.4285714,21.31 L29.0318571,17.4883333 C29.3398571,17.1633333 29.7405714,17 30.1428571,17 C30.5451429,17 30.9458571,17.1633333 31.2538571,17.4883333 C31.8682857,18.1383333 31.8682857,19.1933333 31.2538571,19.845 L26.8098571,24.5583333 L26.758,24.5033333 C26.483,24.99 26.0021429,25.3333333 25.4285714,25.3333333 C24.855,25.3333333 24.3741429,24.99 24.0991429,24.5033333 L24.0472857,24.5583333 L19.6032857,19.845 C18.9888571,19.1933333 18.9888571,18.1383333 19.6032857,17.4883333 C19.9097143,17.1633333 20.312,17 20.7142857,17 C21.1165714,17 21.5172857,17.1633333 21.8252857,17.4883333 L25.4285714,21.31 M31.7142857,12 L19.1428571,12 C17.408,12 16,13.4933333 16,15.3333333 L16,20.3333333 C16,25.855 20.2224286,30.3333333 25.4285714,30.3333333 C30.6347143,30.3333333 34.8571429,25.855 34.8571429,20.3333333 L34.8571429,15.3333333 C34.8571429,13.4933333 33.4491429,12 31.7142857,12" id="icon_pocket"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

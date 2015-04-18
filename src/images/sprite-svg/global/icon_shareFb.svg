@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="9px" height="18px" viewBox="0 0 9 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_fb</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="single" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="single_pc" sketch:type="MSArtboardGroup" transform="translate(-480.000000, -2832.000000)" fill="#FFFFFF">
+            <g id="sns" sketch:type="MSLayerGroup" transform="translate(170.000000, 2744.000000)">
+                <g id="btn_faccebook" transform="translate(280.000000, 76.000000)" sketch:type="MSShapeGroup">
+                    <g id="facebook" transform="translate(30.000000, 7.000000)">
+                        <path d="M5.44628571,11.5108571 L5.44628571,9.43057143 C5.44628571,9.44471429 5.44628571,9.41514286 5.44628571,9.29042857 C5.44628571,8.45471429 5.62242857,7.94942857 6.71657143,7.94942857 C7.731,7.94942857 8.66057143,7.95585714 8.66057143,7.95585714 L8.73128571,5.117 C8.73128571,5.117 7.82228571,5 6.59185714,5 C3.55114286,5 2.23071429,6.87457143 2.23071429,8.91371429 L2.23071429,11.5108571 L0,11.5108571 L0,14.5515714 L2.23071429,14.5515714 L2.23071429,23 L5.44628571,23 L5.44628571,14.5515714 L8.60271429,14.5515714 L8.748,11.5108571 L5.44628571,11.5108571" id="icon_fb"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,6 +1,5 @@
 var foundation = require('foundation');
-var facebook = require('./app/fb.js');
-facebook(document, 'script', 'facebook-jssdk');
+var sns = require('./app/sns.js');
 
 (function($){
   $(document).ready(function(){
@@ -16,7 +15,9 @@ facebook(document, 'script', 'facebook-jssdk');
       });
     }
 
-
+    if(typeof sns !== 'undefined') {
+      sns.init();
+    }
 
   });
 })(jQuery);
