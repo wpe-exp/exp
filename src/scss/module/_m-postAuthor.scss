@@ -1,0 +1,160 @@
+/* postAuthor
+---------------------------------------- */
+%postAuthorMargin {
+  margin-bottom: 10px;
+}
+
+.postAuthor {
+  @extend %group;
+  position: relative;
+  padding: 60px 20px 20px;
+  border-bottom: 2px solid $colorBg;
+  &__authorThumb {
+    width: 100%;
+    max-width: 96px;
+    position: absolute;
+    top: -6%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    border: 2px solid $colorBg;
+  }
+  &__title {
+    @extend %postAuthorMargin;
+    margin-top: 0;
+    font-size: rem-calc(16);
+    text-align: center;
+    line-height: 1;
+  }
+  &__subTitle {
+    @extend %postAuthorMargin;
+    font-size: rem-calc(18);
+    font-weight: bold;
+    line-height: 1.0;
+  }
+  &__name {
+    font-size: rem-calc(26);
+    font-weight: bold;
+  }
+  &__icons {
+    @extend %postAuthorMargin;
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+    > li {
+      width: 32px;
+      height: 32px;
+      margin-right: 8px;
+      list-style-type: none;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    > a {
+      display: block;
+    }
+  }
+  &__description {
+    @extend %postAuthorMargin;
+    font-size: rem-calc(12);
+  }
+  @media #{$medium-up} {
+    padding: 50px 80px 40px;
+    &__authorThumb {
+      top: -11%;
+    }
+    &__subTitle {
+      font-size: rem-calc(20);
+    }
+    &__description {
+      font-size: rem-calc(14);
+    }
+  }
+}
+
+/* authorsPosts
+---------------------------------------- */
+%authorsPostsRight {
+  margin-left: 110px;
+  @media #{$medium-up} {
+    margin-left: 0;
+  }
+}
+.authorsPosts {
+  margin: 0;
+  a {
+    @extend %group;
+    display: block;
+  }
+  &__item {
+    margin-bottom: 20px;
+    list-style-type: none;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__imgWrap {
+    float: left;
+    margin-right: 10px;
+    border-radius: 2px;
+    overflow: hidden;
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  &__meta {
+    @extend %authorsPostsRight;
+    margin-bottom: 6px;
+    line-height: 1.0;
+    > time {
+      margin-right: 2px;
+      color: lighten($colorText, 30%);
+      font-size: rem-calc(11);
+      vertical-align: baseline;
+    }
+  }
+  &__catLabel {
+    vertical-align: middle;
+  }
+  &__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: $colorText;
+    font-size: rem-calc(14);
+    line-height: 1.5;
+  }
+  @media #{$medium-up} {
+    display: flex;
+    &__item {
+      width: 23%;
+      margin-right: 20px;
+      margin-bottom: 0;
+      list-style-type: none;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    &__imgWrap {
+      float: none;
+      margin-right: 0;
+      margin-bottom: 6px;
+      img {
+        width: 180px;
+        height: 90px;
+      }
+    }
+    &__meta {
+      margin-bottom: 6px;
+      > time {
+        font-size: rem-calc(12);
+      }
+    }
+    &__catLabel {
+      float: right;
+    }
+  }
+}

@@ -41,6 +41,17 @@ if( !function_exists( 'is_first_post' ) ) {
 }
 
 /*
+ * Original excerpt
+ */
+function get_my_excerpt( $str, $max = 40 ) {
+	if ( !is_int($max) ) $max = 40;
+	$str = strip_tags( $str );
+	$str_count = mb_strlen( $str, "UTF-8" );
+	if ( $str_count > $max ) $str = mb_substr( $str, 0, $max, "UTF-8" ) . "...";
+	return $str;
+}
+
+/*
  * get_primary_tag return array
  */
 if ( !function_exists( 'get_primary_cat' ) ) {

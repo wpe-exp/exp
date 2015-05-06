@@ -15,4 +15,12 @@
   &--wordpress {
     @include label();
   }
+  &--authors {
+    @include label(
+      $padding: rem-calc(3 10),
+      $text-size: rem-calc(9),
+      $bg: $colorBg
+    );
+    color: lighten($colorText, 20%);
+  }
 }

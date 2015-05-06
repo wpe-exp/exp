@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="36px" height="35px" viewBox="0 0 36 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.1 (12002) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_authorFb.svg</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="single" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="single_pc" sketch:type="MSArtboardGroup" transform="translate(-620.000000, -2269.000000)" fill="#35568C">
+            <g id="author" sketch:type="MSLayerGroup" transform="translate(173.000000, 2172.000000)">
+                <g id="sns" transform="translate(406.000000, 97.000000)" sketch:type="MSShapeGroup">
+                    <path d="M62.67125,17.5065625 L60.2691071,17.5065625 L60.2691071,26.25 L56.7098214,26.25 L56.7098214,17.5065625 L55.0169643,17.5065625 L55.0169643,14.4178125 L56.7098214,14.4178125 L56.7098214,12.4184375 C56.7098214,10.9867188 57.3751786,8.75 60.30125,8.75 L62.9380357,8.7609375 L62.9380357,11.76 L61.0244643,11.76 C60.7126786,11.76 60.2691071,11.9185938 60.2691071,12.6021875 L60.2691071,14.4178125 L62.9830357,14.4178125 L62.67125,17.5065625 L62.67125,17.5065625 Z M59,0 C49.335625,0 41.5,7.835625 41.5,17.5 C41.5,27.1665625 49.335625,35 59,35 C68.6654687,35 76.5,27.1665625 76.5,17.5 C76.5,7.835625 68.6654687,0 59,0 L59,0 Z" id="icon_authorFb.svg"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

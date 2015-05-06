@@ -67,6 +67,72 @@
 	<div id="stylePost" class="post__content stylePost">
 		<?php the_content(); ?>
 	</div>
+	<div class="postAuthor">
+		<div class="postAuthor__authorThumb">
+			<?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?>
+		</div>
+		<h2 class="postAuthor__title">この記事を書いた人: <span class="postAuthor__name"><?php echo get_the_author_meta( 'display_name' ); ?></span></h2>
+		<ul class="postAuthor__icons">
+			<li>
+				<a href="">
+					<svg viewBox="0 0 35 35" role="img" area-labelledby="title desc" width="32px" height="32px">
+						<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite-single.symbol.svg#icon_authorTw"></use>
+					</svg>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<svg viewBox="0 0 36 35" role="img" area-labelledby="title desc" width="32px" height="32px">
+						<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite-single.symbol.svg#icon_authorFb"></use>
+					</svg>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<svg viewBox="0 0 34 34" role="img" area-labelledby="title desc" width="32px" height="32px">
+						<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite-single.symbol.svg#icon_authorGh"></use>
+					</svg>
+				</a>
+			</li>
+		</ul>
+		<p class="postAuthor__description"><?php the_author_meta( 'user_description' ); ?></p>
+		<hr class="postAuthor__separator">
+		<h3 class="postAuthor__subTitle">最近の記事</h3>
+		<?php
+
+		$args = array(
+			'post_type'      => 'post',
+			'posts_per_page' => 4,
+			'post_status'    => 'publish',
+			'author'         => get_the_author_meta( 'ID' )
+		);
+
+		// The Query
+		$the_query = new WP_Query( $args );
+
+		?>
+		<?php
+		// The Loop
+		if ( $the_query->have_posts() ) : ?>
+			<ul class="authorsPosts">
+				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+					<li class="authorsPosts__item">
+						<a href="<?php the_permalink(); ?>">
+							<div class="authorsPosts__imgWrap">
+								<?php ( wp_is_mobile() ) ? the_post_thumbnail( 'thumb340x340' ) : the_post_thumbnail( 'thumbnail' ); ?>
+							</div>
+							<div class="authorsPosts__meta">
+								<time><?php the_date(); ?></time>
+								<span class="authorsPosts__catLabel catLabel catLabel--authors"><?php echo get_the_category()[0]->name; ?></span>
+							</div>
+							<p class="authorsPosts__title"><?php echo get_my_excerpt( get_the_title(), 35 ); ?></p>
+						</a>
+					</li>
+				<?php endwhile; ?>
+			</ul>
+		<?php endif; ?>
+		<?php wp_reset_postdata(); ?>
+	</div><!-- / .postAuthor -->
 	<aside class="widget">
 		<div class="snsShare snsShare--widget">
 			<h2 class="snsShare__title">記事をシェアする</h2>
