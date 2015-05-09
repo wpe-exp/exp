@@ -65,7 +65,33 @@
 	</header>
 
 	<div id="stylePost" class="post__content stylePost">
+		<!-- Google Adsense -->
+		<div class="googleAd">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9850593178268326"
+			     data-ad-slot="7077393692"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+		<!-- / Google Adsense -->
 		<?php the_content(); ?>
+		<!-- Google Adsense -->
+		<div class="googleAd">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9850593178268326"
+			     data-ad-slot="7077393692"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+		<!-- / Google Adsense -->
 	</div>
 	<aside class="widget">
 		<div class="snsShare snsShare--widget">
