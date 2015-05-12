@@ -1,13 +1,13 @@
 /* postAuthor
 ---------------------------------------- */
 %postAuthorMargin {
-  margin-bottom: 10px;
+  margin: 10px auto;
 }
 
 .postAuthor {
   @extend %group;
   position: relative;
-  padding: 60px 20px 20px;
+  padding: 50px 20px 20px;
   border-bottom: 2px solid $colorBg;
   &__authorThumb {
     width: 100%;
@@ -18,13 +18,11 @@
     right: 0;
     margin: auto;
     overflow: hidden;
-    margin-bottom: 12px;
     border-radius: 50%;
     border: 2px solid $colorBg;
   }
   &__title {
     @extend %postAuthorMargin;
-    margin-top: 0;
     font-size: rem-calc(16);
     text-align: center;
     line-height: 1;
@@ -36,7 +34,7 @@
     line-height: 1.0;
   }
   &__name {
-    font-size: rem-calc(26);
+    font-size: rem-calc(22);
     font-weight: bold;
   }
   &__icons {
@@ -44,25 +42,61 @@
     display: flex;
     justify-content: center;
     margin-left: 0;
-    > li {
+    li {
       width: 32px;
       height: 32px;
       margin-right: 8px;
       list-style-type: none;
-      &:last-child {
-        margin-right: 0;
+        &:last-child {
+          margin-right: 0;
+        }
+      a,
+      span {
+        display: block;
+        line-height: 1;
       }
-    }
-    > a {
-      display: block;
+      a {
+        .authorTw {
+          transition: 0.3s;
+          fill: $colorTw;
+          &:hover {
+            fill: $colorTwHover;
+          }
+        }
+        .authorFb {
+          transition: 0.3s;
+          fill: $colorFb;
+          &:hover {
+            fill: $colorFbHover;
+          }
+        }
+        .authorGh {
+          transition: 0.3s;
+          fill: $colorGh;
+          &:hover {
+            fill: $colorGhHover;
+          }
+        }
+      }
+      span {
+        .authorTw,
+        .authorFb,
+        .authorGh {
+          fill: #999;
+        }
+      }
     }
   }
   &__description {
     @extend %postAuthorMargin;
     font-size: rem-calc(12);
   }
+  &__separator {
+    border: solid $colorBg;
+    border-width: 1px 0 0;
+  }
   @media #{$medium-up} {
-    padding: 50px 80px 40px;
+    padding: 40px 80px;
     &__authorThumb {
       top: -11%;
     }
@@ -75,6 +109,7 @@
   }
 }
 
+
 /* authorsPosts
 ---------------------------------------- */
 %authorsPostsRight {
@@ -85,16 +120,16 @@
 }
 .authorsPosts {
   margin: 0;
-  a {
-    @extend %group;
-    display: block;
-  }
   &__item {
-    margin-bottom: 20px;
+    margin: 10px auto;
     list-style-type: none;
     &:last-child {
       margin-bottom: 0;
     }
+  }
+  &__link {
+    @extend %group;
+    display: block;
   }
   &__imgWrap {
     float: left;
@@ -110,7 +145,7 @@
     @extend %authorsPostsRight;
     margin-bottom: 6px;
     line-height: 1.0;
-    > time {
+    time {
       margin-right: 2px;
       color: lighten($colorText, 30%);
       font-size: rem-calc(11);
@@ -128,14 +163,23 @@
     line-height: 1.5;
   }
   @media #{$medium-up} {
-    display: flex;
     &__item {
-      width: 23%;
+      float: left;
+      width: 22.5%;
       margin-right: 20px;
       margin-bottom: 0;
       list-style-type: none;
       &:last-child {
         margin-right: 0;
+      }
+    }
+    &__link {
+      &:hover {
+        time,
+        p {
+          transition: 0.3s;
+          color: $colorLink;
+        }
       }
     }
     &__imgWrap {
@@ -149,7 +193,7 @@
     }
     &__meta {
       margin-bottom: 6px;
-      > time {
+      time {
         font-size: rem-calc(12);
       }
     }

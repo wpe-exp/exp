@@ -28,6 +28,64 @@ function show_wp_query() {
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 /*
+ * Adding and using custom user profile fields
+ */
+add_action( 'show_user_profile', 'my_show_extra_profile_fields' );
+add_action( 'edit_user_profile', 'my_show_extra_profile_fields' );
+
+function my_show_extra_profile_fields( $user ) {
+
+	echo '<h3>SNS アカウント</h3>';
+	echo '<table class="form-table">';
+		echo '<tr>';
+			echo '<th><label for="twitter">Twitter</label></th>';
+			echo '<td>';
+				echo '<input type="text" name="twitter" id="twitter" value="' . esc_attr( get_the_author_meta( 'twitter', $user->ID ) ) . '" class="regular-text" /><br />';
+				echo '<span class="description">Twitter のユーザー名を入力して下さい。アットマークは不要です。</span>';
+			echo '</td>';
+		echo '</tr>';
+	echo '</table>';
+
+	echo '<table class="form-table">';
+		echo '<tr>';
+			echo '<th><label for="facebook">Facebook</label></th>';
+			echo '<td>';
+				echo '<input type="text" name="facebook" id="facebook" value="' . esc_attr( get_the_author_meta( 'facebook', $user->ID ) ) . '" class="regular-text" /><br />';
+				echo '<span class="description">Facebook の URL を入力してください。</span>';
+			echo '</td>';
+		echo '</tr>';
+	echo '</table>';
+
+	echo '<table class="form-table">';
+		echo '<tr>';
+			echo '<th><label for="github">GitHub</label></th>';
+			echo '<td>';
+				echo '<input type="text" name="github" id="github" value="' . esc_attr( get_the_author_meta( 'github', $user->ID ) ) . '" class="regular-text" /><br />';
+				echo '<span class="description">GitHUb のユーザー名を入力してください。</span>';
+			echo '</td>';
+		echo '</tr>';
+	echo '</table>';
+}
+
+/*
+ * Adding and using custom user profile fields
+ */
+add_action( 'personal_options_update', 'my_save_extra_profile_fields' );
+add_action( 'edit_user_profile_update', 'my_save_extra_profile_fields' );
+
+function my_save_extra_profile_fields( $user_id ) {
+
+	if ( !current_user_can( 'edit_user', $user_id ) )
+		return false;
+
+	update_usermeta( $user_id, 'twitter', $_POST['twitter'] );
+	update_usermeta( $user_id, 'facebook', $_POST['facebook'] );
+	update_usermeta( $user_id, 'github', $_POST['github'] );
+}
+
+
+
+/*
  * Is 1st post in the roop
  */
 if( !function_exists( 'is_first_post' ) ) {

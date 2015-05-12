@@ -71,28 +71,49 @@
 		<div class="postAuthor__authorThumb">
 			<?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?>
 		</div>
-		<h2 class="postAuthor__title">この記事を書いた人: <span class="postAuthor__name"><?php echo get_the_author_meta( 'display_name' ); ?></span></h2>
+		<h2 class="postAuthor__title">author: <span class="postAuthor__name"><?php echo get_the_author_meta( 'display_name' ); ?></span></h2>
 		<ul class="postAuthor__icons">
 			<li>
-				<a href="">
-					<svg viewBox="0 0 35 35" role="img" area-labelledby="title desc" width="32px" height="32px">
-						<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite-single.symbol.svg#icon_authorTw"></use>
-					</svg>
-				</a>
+				<?php
+				$svg = '<svg class="authorTw" viewBox="0 0 35 35" role="img" area-labelledby="title desc" width="32px" height="32px"><use xlink:href="' . get_template_directory_uri() . '/assets/images/sprite-single.symbol.svg#icon_authorTw"></use></svg>';
+
+				if ( get_the_author_meta( 'twitter' ) ) {
+					$html = '<a href="https://twitter.com/' . get_the_author_meta( 'twitter' ) . '" target="_blank">';
+					$html .= $svg;
+					$html .= '</a>';
+				} else {
+					$html = '<span>' . $svg . '</span>';
+				}
+				echo $html;
+				?>
 			</li>
 			<li>
-				<a href="">
-					<svg viewBox="0 0 36 35" role="img" area-labelledby="title desc" width="32px" height="32px">
-						<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite-single.symbol.svg#icon_authorFb"></use>
-					</svg>
-				</a>
+				<?php
+				$svg = '<svg class="authorFb" viewBox="0 0 36 35" role="img" area-labelledby="title desc" width="32px" height="32px"><use xlink:href="' . get_template_directory_uri() . '/assets/images/sprite-single.symbol.svg#icon_authorFb"></use>';
+
+				if ( get_the_author_meta( 'facebook' ) ) {
+					$html = '<a href="' . get_the_author_meta( 'facebook' ) . '" target="_blank">';
+					$html .= $svg;
+					$html .= '</a>';
+				} else {
+					$html = '<span>' . $svg . '</span>';
+				}
+				echo $html;
+				?>
 			</li>
 			<li>
-				<a href="">
-					<svg viewBox="0 0 34 34" role="img" area-labelledby="title desc" width="32px" height="32px">
-						<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite-single.symbol.svg#icon_authorGh"></use>
-					</svg>
-				</a>
+				<?php
+				$svg = '<svg class="authorGh" viewBox="0 0 34 34" role="img" area-labelledby="title desc" width="32px" height="32px"><use xlink:href="' . get_template_directory_uri() . '/assets/images/sprite-single.symbol.svg#icon_authorGh"></use>';
+
+				if ( get_the_author_meta( 'github' ) ) {
+					$html = '<a href="https://github.com/' . get_the_author_meta( 'github' ) . '" target="_blank">';
+					$html .= $svg;
+					$html .= '</a>';
+				} else {
+					$html = '<span>' . $svg . '</span>';
+				}
+				echo $html;
+				?>
 			</li>
 		</ul>
 		<p class="postAuthor__description"><?php the_author_meta( 'user_description' ); ?></p>
@@ -117,7 +138,7 @@
 			<ul class="authorsPosts">
 				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 					<li class="authorsPosts__item">
-						<a href="<?php the_permalink(); ?>">
+						<a class="authorsPosts__link" href="<?php the_permalink(); ?>">
 							<div class="authorsPosts__imgWrap">
 								<?php ( wp_is_mobile() ) ? the_post_thumbnail( 'thumb340x340' ) : the_post_thumbnail( 'thumbnail' ); ?>
 							</div>
