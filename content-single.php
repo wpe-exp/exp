@@ -66,7 +66,7 @@
 
 	<div id="stylePost" class="post__content stylePost">
 		<!-- Google Adsense -->
-		<div class="googleAd">
+		<div class="googleAd googleAd--top">
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 			<ins class="adsbygoogle"
 			     style="display:block"
@@ -80,7 +80,7 @@
 		<!-- / Google Adsense -->
 		<?php the_content(); ?>
 		<!-- Google Adsense -->
-		<div class="googleAd">
+		<div class="googleAd googleAd--bottom">
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 			<ins class="adsbygoogle"
 			     style="display:block"
