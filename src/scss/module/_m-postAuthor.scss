@@ -121,14 +121,15 @@
 .authorsPosts {
   margin: 0;
   &__item {
-    margin: 10px auto;
+    @extend %postAuthorMargin;
+    min-height: 100px;
     list-style-type: none;
     &:last-child {
       margin-bottom: 0;
     }
   }
   &__link {
-    @extend %group;
+    // @extend %group;
     display: block;
   }
   &__imgWrap {
@@ -163,14 +164,13 @@
     line-height: 1.5;
   }
   @media #{$medium-up} {
+    @include grid-row;
     &__item {
+      width: 25%;
       float: left;
-      width: 22.5%;
-      margin-right: 20px;
-      margin-bottom: 0;
-      list-style-type: none;
-      &:last-child {
-        margin-right: 0;
+      padding-left: .74rem;
+      &:first-child {
+        padding-left: 0;
       }
     }
     &__link {
