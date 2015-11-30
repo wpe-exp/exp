@@ -93,6 +93,9 @@
 		</div>
 		<!-- / Google Adsense -->
 	</div>
+	<?php // post author
+	get_template_part( 'content', 'author' );
+	?>
 	<aside class="widget">
 		<div class="snsShare snsShare--widget">
 			<h2 class="snsShare__title">記事をシェアする</h2>

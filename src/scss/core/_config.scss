@@ -27,10 +27,12 @@ $colorSelection    : #accef7;
 $colorCatBlog      : #888;
 // SNS color
 $colorTw           : #55acee;
-$colorTwHover      : lighten($colorTw, 5%);
+$colorTwHover      : lighten($colorTw, 10%);
 $colorFb           : #3B5998;
-$colorFbHover      : lighten($colorFb, 5%);
+$colorFbHover      : lighten($colorFb, 10%);
 $colorPocket       : #f03e56;
-$colorPocketHover  : lighten($colorPocket, 5%);
+$colorPocketHover  : lighten($colorPocket, 10%);
 $colorHatena       : #0071C5;
-$colorHatenaHover  : lighten($colorHatena, 5%);
+$colorHatenaHover  : lighten($colorHatena, 10%);
+$colorGh           : #181616;
+$colorGhHover      : lighten($colorGh, 20%);
