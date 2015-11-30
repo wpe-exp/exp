@@ -53,6 +53,7 @@ function exp_setup() {
 	 */
 	set_post_thumbnail_size( 360, 180, true );
 	add_image_size( 'thumb340x340', 340, 340, true );
+	add_image_size( 'thumb360x180', 360, 180, true );
 	add_image_size( 'thumb680x680', 680, 680, true );
 	add_image_size( 'thumb640x280', 640, 280, true );
 	add_image_size( 'thumb940x400', 940, 400, true );

@@ -65,95 +65,37 @@
 	</header>
 
 	<div id="stylePost" class="post__content stylePost">
-		<?php the_content(); ?>
-	</div>
-	<div class="postAuthor">
-		<div class="postAuthor__authorThumb">
-			<?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?>
+		<!-- Google Adsense -->
+		<div class="googleAd googleAd--top">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9850593178268326"
+			     data-ad-slot="7077393692"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
 		</div>
-		<h2 class="postAuthor__title">author: <span class="postAuthor__name"><?php echo get_the_author_meta( 'display_name' ); ?></span></h2>
-		<ul class="postAuthor__icons">
-			<li>
-				<?php
-				$svg = '<svg class="authorTw" viewBox="0 0 35 35" role="img" area-labelledby="title desc" width="32px" height="32px"><use xlink:href="' . get_template_directory_uri() . '/assets/images/sprite-single.symbol.svg#icon_authorTw"></use></svg>';
-
-				if ( get_the_author_meta( 'twitter' ) ) {
-					$html = '<a href="https://twitter.com/' . get_the_author_meta( 'twitter' ) . '" target="_blank">';
-					$html .= $svg;
-					$html .= '</a>';
-				} else {
-					$html = '<span>' . $svg . '</span>';
-				}
-				echo $html;
-				?>
-			</li>
-			<li>
-				<?php
-				$svg = '<svg class="authorFb" viewBox="0 0 36 35" role="img" area-labelledby="title desc" width="32px" height="32px"><use xlink:href="' . get_template_directory_uri() . '/assets/images/sprite-single.symbol.svg#icon_authorFb"></use>';
-
-				if ( get_the_author_meta( 'facebook' ) ) {
-					$html = '<a href="' . get_the_author_meta( 'facebook' ) . '" target="_blank">';
-					$html .= $svg;
-					$html .= '</a>';
-				} else {
-					$html = '<span>' . $svg . '</span>';
-				}
-				echo $html;
-				?>
-			</li>
-			<li>
-				<?php
-				$svg = '<svg class="authorGh" viewBox="0 0 34 34" role="img" area-labelledby="title desc" width="32px" height="32px"><use xlink:href="' . get_template_directory_uri() . '/assets/images/sprite-single.symbol.svg#icon_authorGh"></use>';
-
-				if ( get_the_author_meta( 'github' ) ) {
-					$html = '<a href="https://github.com/' . get_the_author_meta( 'github' ) . '" target="_blank">';
-					$html .= $svg;
-					$html .= '</a>';
-				} else {
-					$html = '<span>' . $svg . '</span>';
-				}
-				echo $html;
-				?>
-			</li>
-		</ul>
-		<p class="postAuthor__description"><?php the_author_meta( 'user_description' ); ?></p>
-		<hr class="postAuthor__separator">
-		<h3 class="postAuthor__subTitle">最近の記事</h3>
-		<?php
-
-		$args = array(
-			'post_type'      => 'post',
-			'posts_per_page' => 4,
-			'post_status'    => 'publish',
-			'author'         => get_the_author_meta( 'ID' )
-		);
-
-		// The Query
-		$the_query = new WP_Query( $args );
-
-		?>
-		<?php
-		// The Loop
-		if ( $the_query->have_posts() ) : ?>
-			<ul class="authorsPosts">
-				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-					<li class="authorsPosts__item">
-						<a class="authorsPosts__link" href="<?php the_permalink(); ?>">
-							<div class="authorsPosts__imgWrap">
-								<?php ( wp_is_mobile() ) ? the_post_thumbnail( 'thumb340x340' ) : the_post_thumbnail( 'thumbnail' ); ?>
-							</div>
-							<div class="authorsPosts__meta">
-								<time><?php the_date(); ?></time>
-								<span class="authorsPosts__catLabel catLabel catLabel--authors"><?php echo get_the_category()[0]->name; ?></span>
-							</div>
-							<p class="authorsPosts__title"><?php echo get_my_excerpt( get_the_title(), 35 ); ?></p>
-						</a>
-					</li>
-				<?php endwhile; ?>
-			</ul>
-		<?php endif; ?>
-		<?php wp_reset_postdata(); ?>
-	</div><!-- / .postAuthor -->
+		<!-- / Google Adsense -->
+		<?php the_content(); ?>
+		<!-- Google Adsense -->
+		<div class="googleAd googleAd--bottom">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9850593178268326"
+			     data-ad-slot="7077393692"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+		<!-- / Google Adsense -->
+	</div>
+	<?php // post author
+	get_template_part( 'content', 'author' );
+	?>
 	<aside class="widget">
 		<div class="snsShare snsShare--widget">
 			<h2 class="snsShare__title">記事をシェアする</h2>

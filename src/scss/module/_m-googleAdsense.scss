@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* googleAd
+---------------------------------------- */
+.googleAd {
+  padding: 10px;
+  border: 1px solid $colorBg;
+  &--top {
+    margin-bottom: 40px;
+  }
+  &--bottom {
+    margin: 40px auto 0 auto;
+  }
+}

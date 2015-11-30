@@ -26,6 +26,14 @@
     font-size: 0;
   }
 }
+// hover
+%textLinkHover {
+  color: $colorText;
+  transition: .3s;
+  &:hover {
+    color: $colorLink;
+  }
+}
 
 //***********************
 // imageReplace
