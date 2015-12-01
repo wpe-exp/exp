@@ -5,7 +5,7 @@ module.exports = {
     this.fbOpen();
     this.haCount();
     this.haOpen();
-    this.twCount();
+    // this.twCount();
     this.twOpen();
     this.pocketBtn(document,"pocket-btn-js");
   },
@@ -27,7 +27,7 @@ module.exports = {
       success: function(json) {
         var count;
         count = json.shares ? json.shares : 0;
-        $('#main').find('.snsShare__count--fb').html(count);
+        $('#main').find('.count--fb').html(count);
       }
     });
   },
@@ -49,7 +49,7 @@ module.exports = {
       success: function(json) {
         var count;
         count = json ? json : 0;
-        $('#main').find('.snsShare__count--ha').html(count);
+        $('#main').find('.count--ha').html(count);
 
         if(typeof(count) == 'undefined'){
           count = 0;
@@ -65,20 +65,6 @@ module.exports = {
     });
   },
   // twtter
-  twCount: function() {
-    var pageURL = location.href;
-    pageURL = encodeURIComponent(pageURL);
-    url = 'http://urls.api.twitter.com/1/urls/count.json?url=' + pageURL;
-    $.ajax({
-      url: url,
-      dataType: 'jsonp',
-      success: function(json) {
-        var count;
-        count = json.count ? json.count : 0;
-        $('#main').find('.snsShare__count--tw').html(count);
-      }
-    });
-  },
   twOpen: function() {
     var $target = $('#main').find('.snsShare__icon--tw');
     $target.on('click', function(event) {
