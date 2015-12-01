@@ -35,6 +35,10 @@
     color: #fff;
     box-shadow: 0px 2px 1px rgba(0,0,0,.3);
   }
+  &:visited,
+  &:active {
+    color: #fff;
+  }
   svg {
     vertical-align: middle;
   }
@@ -84,6 +88,4 @@
   background-color: #fff;
   border-radius: 2px;
   font-size: rem-calc(14);
-  &--fb {}
-  &--ha {}
 }

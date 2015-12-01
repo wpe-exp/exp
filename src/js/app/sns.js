@@ -5,7 +5,6 @@ module.exports = {
     this.fbOpen();
     this.haCount();
     this.haOpen();
-    // this.twCount();
     this.twOpen();
     this.pocketBtn(document,"pocket-btn-js");
   },
@@ -18,21 +17,18 @@ module.exports = {
     fjs.parentNode.insertBefore(js, fjs);
   },
   fbCount: function() {
-    var pageURL = location.href;
-    pageURL = encodeURIComponent(pageURL);
-    url = 'http://graph.facebook.com/?id=' + pageURL;
+    var url = 'http://graph.facebook.com/?id=' + encodeURIComponent(location.href);
     $.ajax({
       url: url,
       dataType: 'jsonp',
       success: function(json) {
-        var count;
-        count = json.shares ? json.shares : 0;
+        var count = json.shares ? json.shares: 0;
         $('#main').find('.count--fb').html(count);
       }
     });
   },
   fbOpen: function() {
-    var $target = $('#main').find('.snsShare__btnFb');
+    var $target = $('#main').find('.btnShare--fb');
     $target.on('click', function(event) {
       event.preventDefault();
       window.open($(this).attr('href'), 'facebook', 'width=670, height=400, menubar=no, toolbar=no, scrollbars=yes');
@@ -40,15 +36,12 @@ module.exports = {
   },
   // hatebu
   haCount: function() {
-    var pageURL = location.href;
-    pageURL = encodeURIComponent(pageURL);
-    url = 'http://api.b.st-hatena.com/entry.count?url=' + pageURL;
+    var url = 'http://api.b.st-hatena.com/entry.count?url=' + encodeURIComponent(location.href);
     $.ajax({
       url: url,
       dataType: 'jsonp',
       success: function(json) {
-        var count;
-        count = json ? json : 0;
+        var count = json ? json : 0;
         $('#main').find('.count--ha').html(count);
 
         if(typeof(count) == 'undefined'){
@@ -58,7 +51,7 @@ module.exports = {
     });
   },
   haOpen: function() {
-    var $target = $('#main').find('.snsShare__btnHa');
+    var $target = $('#main').find('.btnShare--ha');
     $target.on('click', function(event) {
       event.preventDefault();
       window.open($(this).attr('href'), 'はてなブックマークブックマークレット', 'width=550, height=420, menubar=no, toolbar=no, scrollbars=yes');
@@ -66,7 +59,7 @@ module.exports = {
   },
   // twtter
   twOpen: function() {
-    var $target = $('#main').find('.snsShare__icon--tw');
+    var $target = $('#main').find('.btnShare--tw');
     $target.on('click', function(event) {
       event.preventDefault();
       window.open($(this).attr('href'), 'Twitter でリンクを共有する', 'width=550, height=400, menubar=no, toolbar=no, scrollbars=yes');
