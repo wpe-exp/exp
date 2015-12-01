@@ -4,6 +4,9 @@
 .snsShare {
   background-color: #ffffff;
   padding: 20px;
+  @media #{$medium-up} {
+    padding: 40px 80px;
+  }
   &__title {
     font-size: rem-calc(18);
     font-weight: bold;
@@ -16,122 +19,73 @@
     @extend %group;
     flex: 1;
     list-style-type: none;
-    &:first-child {
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px;
-    }
-    &:last-child {
-      border-top-right-radius: 4px;
-      border-bottom-right-radius: 4px;
-    }
-    &--tw {
-      background-color: $colorTw;
-    }
-    &--fb {
-      background-color: $colorFb;
-    }
-    &--po {
-      background-color: $colorPocket;
-      > .pocket-btn {
-        height: 20px;
-        margin: 18px auto;
-        text-align: center;
-      }
-    }
-    &--ha {
-      background-color: $colorHatena;
-    }
-  }
-  &__count {
-    position: relative;
-    display: block;
-    box-sizing: border-box;
-    z-index: 10;
-    margin: 6px 6px 8px 6px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    text-align: center;
-    background-color: #ffffff;
-    color: #555555;
-    font-size: rem-calc(10);
-    font-weight: bold;
-    border-radius: 2px;
-    line-height: 1.0;
-    &:after {
-      @include triangle(down, 8px, 8px, #ffffff);
-      content: "";
-      position: absolute;
-      top: 13px;
-      left: 0;
-      right: 0;
-      margin: auto;
-    }
-  }
-  &__icon {
-    display: block;
-    box-sizing: border-box;
-    text-align: center;
-    color: #ffffff;
   }
 }
-
-@media #{$medium-up}{
-  .snsShare {
-    padding: 40px 80px;
-    &__title {
-      margin-top: 0;
-      font-size: rem-calc(20);
-    }
-    &__list {
-      margin: 0;
-    }
-    &__item {
-      border-radius: 4px;
-      margin-right: 10px;
-      transition: .3s;
-      &:last-child {
-        margin-right: 0;
-      }
-      &:hover {
-      }
-      &--tw {
-        box-shadow: 0 3px 0 darken($colorTw, 20%);
-        &:hover {
-          background-color: darken($colorTw, 10%);
-        }
-      }
-      &--fb {
-        box-shadow: 0 3px 0 darken($colorFb, 20%);
-        &:hover {
-          background-color: darken($colorFb, 10%);
-        }
-      }
-      &--po {
-        box-shadow: 0 3px 0 darken($colorPocket, 20%);
-        &:hover {
-          background-color: darken($colorPocket, 10%);
-        }
-      }
-      &--ha {
-        box-shadow: 0 3px 0 darken($colorHatena, 20%);
-        &:hover {
-          background-color: darken($colorHatena, 10%);
-        }
-      }
-    }
-    &__count {
-      text-align: center;
-      font-size: rem-calc(12);
-      &:after {
-        top: 15px;
-      }
-      &--tw {
-      transition: .3s;
-        &:hover {
-          box-shadow: 0px 1px 2px 2px rgba(0,0,0,.3);
-          text-decoration: underline;
-        }
-      }
+/**
+ * share button
+ */
+.btnShare {
+  display: block;
+  padding: 6px;
+  height: 60px;
+  color: #fff;
+  transition: .25s;
+  text-align: center;
+  &:hover {
+    color: #fff;
+    box-shadow: 0px 2px 1px rgba(0,0,0,.3);
+  }
+  &:visited,
+  &:active {
+    color: #fff;
+  }
+  svg {
+    vertical-align: middle;
+  }
+  &__text {
+    margin-left: 4px;
+    font-size: rem-calc(14);
+    letter-spacing: 0.8px;
+    line-height: 1.1;
+    @media #{$small-only} {
+      display: none;
     }
   }
+  &--fb {
+    background-color: $colorFb;
+    &:hover {
+      background-color: $colorFbHover;
+    }
+  }
+  &--ha {
+    background-color: $colorHa;
+    &:hover {
+      background-color: $colorHaHover;
+    }
+  }
+  &--tw {
+    padding: 18px 0 24px 0;
+    background-color: $colorTw;
+    &:hover {
+      background-color: $colorTwHover;
+    }
+  }
+  &--po {
+    padding: 20px 0 24px 0;
+    background-color: $colorPo;
+    > .pocket-btn {
+      text-align: center;
+    }
+  }
+}
+/**
+ * counnt
+ */
+.count {
+  display: block;
+  padding: 2px 0;
+  color: $colorText;
+  background-color: #fff;
+  border-radius: 2px;
+  font-size: rem-calc(14);
 }
