@@ -14,6 +14,7 @@
 			<li><label>Menu</label></li>
 			<li class="globalNavSp__item"><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">About</a></li>
 			<li class="globalNavSp__item"><a href="<?php echo esc_url( home_url( '/author/' ) ); ?>">Member</a></li>
+			<li class="globalNavSp__item"><a href="<?php echo esc_url( home_url( '/support/' ) ); ?>">Support</a></li>
 		</ul>
 		<ul class="off-canvas-list">
 			<li><label>Categories</label></li>
