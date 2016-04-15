@@ -20,6 +20,9 @@ get_header(); ?>
 <?php endif; ?>
 
 <section>
+	<div class="l-row support-banner" style="margin-top:20px;">
+		<a href="<?php echo esc_url( home_url( '/support/' ) ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/front/wordpressbook.jpg" alt="ビジネスサイトをこれからつくる WordPressデザイン入門サポートページ"></a>
+	</div>
 	<div class="l-row">
 		<h2 class="pageTitle"><?php the_custom_archive_title(); ?></h2>
 	</div>
