@@ -482,8 +482,25 @@
     }
     table {
       margin: 20px 0;
-      display: block;
       width: auto;
+      width: 100%;
+      border-collapse: collapse;
+      th {
+        background-color: #666;
+        color: #fff;
+        padding: .125em .5em;
+        text-align: left;
+        border-color: $colorBg;
+        border-style: solid;
+        border-width: 0 0 0 1px;
+        &:first-child {
+          border-left-width: 0;
+        }
+      }
+      td {
+        padding: .125em .5em;
+        border: 1px solid  $colorBg;
+      }
     }
     hr {
       margin: 40px 0;
