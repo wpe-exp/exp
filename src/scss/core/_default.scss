@@ -87,3 +87,12 @@ img {
 svg:not(:root) {
   overflow: hidden;
 }
+
+/* =========================================================
+   Make sure embeds and iframes fit their containers.
+========================================================= */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
